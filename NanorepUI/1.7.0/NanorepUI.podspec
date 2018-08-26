@@ -1,3 +1,9 @@
+# ===================================================================================================
+# Copyright © 2018 bold360ai(LogMeIn).
+# NanorepUI SDK.
+#ֿ All rights reserved.
+# ===================================================================================================
+
 Pod::Spec.new do |s|
   s.name             = 'NanorepUI'
   s.version = '1.7.0'
@@ -26,7 +32,7 @@ Pod::Spec.new do |s|
     # ]
 
 s.source = {
-"http" => "https://dl.bintray.com/nanorep/Specs-Dev/NanorepUI_version_v1.7.0.rc5_commit_baf1c9b337256f7e5aa60723dcfeb1b406ee86ee.zip"
+"http" => "https://dl.bintray.com/nanorep/Specs-Dev/NanorepUI_version_v1.7.0.rc7_commit_530c9a787cc4e141abe8635a71db57077ed562b0.zip"
 }
   s.vendored_frameworks = 'NanorepUI.framework'
   s.requires_arc = true
