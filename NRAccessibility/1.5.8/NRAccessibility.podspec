@@ -11,7 +11,7 @@ s.homepage         = 'https://github.com/nanorepsdk/NanorepUI/wiki'
 s.license = 'private'
 s.author           = 'nanorep'
 s.source = {
-    "http" => "https://dl.bintray.com/nanorep/Specs-Dev/NRAccessibility_version_v1.5.8.rc1_commit_de771e7a906e270e32413bc98a1c9fe5b6aec57b.zip"
+    "http" => "https://dl.bintray.com/nanorep/Specs-Dev/NRAccessibility_version_v1.5.8.rc2_commit_5337ce6dbf9a4a270dc9c7c125bf42143f23f158.zip"
 }
 s.vendored_frameworks = 'NRAccessibility.framework'
 s.requires_arc = true
