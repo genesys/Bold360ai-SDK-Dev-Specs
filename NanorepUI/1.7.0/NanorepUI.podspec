@@ -32,7 +32,7 @@ Pod::Spec.new do |s|
     # ]
 
 s.source = {
-"http" => "https://dl.bintray.com/nanorep/Specs-Dev/NanorepUI_version_v1.7.0.rc12_commit_279bd66f5441496dd08804188e4677362fa087ce.zip"
+"http" => "https://dl.bintray.com/nanorep/Specs-Dev/NanorepUI_version_v1.7.0.rc13_commit_2aa1f09d94d881fffd82565b6943a812c1aeec6e.zip"
 }
   s.vendored_frameworks = 'NanorepUI.framework'
   s.requires_arc = true
