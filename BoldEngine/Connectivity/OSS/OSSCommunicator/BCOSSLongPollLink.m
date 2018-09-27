@@ -43,7 +43,7 @@ typedef enum {
                                     BCOSSAutoMessageNotificationDelegate>
 
 @property(nonatomic, assign)BCOSSLongPollLinkState state;
-@property(nonatomic, strong)NSMutableArray *callQueue;
+@property(nonatomic, strong)NSMutableArray<BCCall *> *callQueue;
 @property(nonatomic, strong)BCLongPollCall *longPollCall;
 @property(nonatomic, strong)BCTimer *inactivityTimer;
 @property(nonatomic, strong)BCTimer *waitingToReconnectTimer;

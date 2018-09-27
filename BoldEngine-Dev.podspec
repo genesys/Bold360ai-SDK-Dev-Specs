@@ -21,6 +21,10 @@ Pod::Spec.new do |s|
   s.public_header_files = 'BoldEngine/**/*.h'
   s.source_files = ['BoldEngine/**/*.{h,m}']
   s.exclude_files = ['BoldEngine/Info.plist']
-  s.pod_target_xcconfig     = { 'CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF' => 'NO' }
+  s.libraries = ['icucore']
+  s.pod_target_xcconfig     = { 
+    'CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF' => 'NO',
+    'OTHER_LDFLAGS' => '$(inherited)'
+    }
 
 end
