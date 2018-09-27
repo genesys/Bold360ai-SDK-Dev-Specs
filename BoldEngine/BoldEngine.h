@@ -16,4 +16,10 @@ FOUNDATION_EXPORT const unsigned char BoldEngineVersionString[];
 
 // In this header, you should import all the public headers of your framework using statements like #import <BoldEngine/PublicHeader.h>
 
-
+#import <BoldEngine/BCAccount.h>
+#import <BoldEngine/BCChat.h>
+#import <BoldEngine/BCChatSession.h>
+#import <BoldEngine/BCForm.h>
+#import <BoldEngine/BCCreateChatSessionDelegate.h>
+#import <BoldEngine/BCChatSession.h>
+#import <BoldEngine/BCMessage.h>
