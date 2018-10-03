@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "BCMessage.h"
+#import <BoldEngine/BCMessage.h>
 
 @class BCOSSCommunicator;
 @class BCPerson;

@@ -3,11 +3,11 @@
 //
 
 #import "BCChatImpl.h"
-#import "BCMessage.h"
+#import <BoldEngine/BCMessage.h>
 #import "BCStartChatCall.h"
 #import "BCOSSCommunicator.h"
 #import "NSString+RandomIdentifier.h"
-#import "BCPerson.h"
+#import <BoldEngine/BCPerson.h>
 #import "BCFinishChatCall.h"
 #import "BCForm.h"
 #import "BCTimer.h"

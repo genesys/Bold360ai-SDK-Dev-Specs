@@ -7,8 +7,8 @@
 //
 
 #import "BCOSSAddMessageNotification.h"
-#import "BCMessage.h"
-#import "BCPerson.h"
+#import <BoldEngine/BCMessage.h>
+#import <BoldEngine/BCPerson.h>
 #import "NSObject+nilOrValue.h"
 
 @implementation BCOSSAddMessageNotification

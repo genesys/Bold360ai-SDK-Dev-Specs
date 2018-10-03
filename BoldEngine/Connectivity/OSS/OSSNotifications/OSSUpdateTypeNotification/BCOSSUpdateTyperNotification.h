@@ -7,7 +7,7 @@
 //
 
 #import "BCOSSNotification.h"
-#import "BCPerson.h"
+#import <BoldEngine/BCPerson.h>
 
 @class BCOSSUpdateTyperNotification;
 

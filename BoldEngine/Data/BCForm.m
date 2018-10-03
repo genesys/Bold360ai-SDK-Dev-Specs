@@ -3,7 +3,7 @@
 //
 
 #import "BCForm.h"
-#import "BCFormField.h"
+#import <BoldEngine/BCFormField.h>
 
 /**
  BCForm private interface.

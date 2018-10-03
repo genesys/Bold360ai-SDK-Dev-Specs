@@ -10,7 +10,7 @@
 #import "BCOSSWebSocketLink.h"
 #import "SRWebSocket.h"
 #import "NSString+RandomIdentifier.h"
-#import "BCMessage.h"
+#import <BoldEngine/BCMessage.h>
 #import "BCOSSResponsePreProcessor.h"
 #import "BCOSSConnectNotification.h"
 #import "BCOSSConnectCall.h"

@@ -3,7 +3,7 @@
 //  Copyright (c) 2014 LogMeIn Inc. All rights reserved.
 //
 
-#import "NSString+BCValidation.h"
+#import <BoldEngine/NSString+BCValidation.h>
 
 @implementation NSString (BCEmailAddressValidation)
 

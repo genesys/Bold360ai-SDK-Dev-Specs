@@ -11,7 +11,7 @@
 #import "BCConnectivityManager.h"
 #import "BCCreateChatCall.h"
 #import "BCForm.h"
-#import "BCFormField.h"
+#import <BoldEngine/BCFormField.h>
 #import "BCChatImpl.h"
 #import "BCSubmitUnavailableEmailCall.h"
 #import "BCSubmitPreChatCall.h"
@@ -21,7 +21,7 @@
 #import "BCChangeLanguageCall.h"
 #import "BCChatRecovery.h"
 #import "BCAccount.h"
-#import "NSString+BCValidation.h"
+#import <BoldEngine/NSString+BCValidation.h>
 #import "BCCancelableImpl.h"
 
 /** @file */

@@ -2,7 +2,7 @@
 //  Copyright (c) 2014 LogMeIn Inc. All rights reserved.
 //
 
-#import "BCFormFieldOption.h"
+#import <BoldEngine/BCFormFieldOption.h>
 
 /**
  BCFormFieldOption private inerface..

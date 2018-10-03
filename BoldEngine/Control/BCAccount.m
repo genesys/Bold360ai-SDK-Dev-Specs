@@ -5,12 +5,12 @@
 
 #import "BCAccount.h"
 #import "BCChatSessionImpl.h"
-#import "BCPerson.h"
+#import <BoldEngine/BCPerson.h>
 #import "BCChatAvailabilityChecker.h"
 #import "BCConnectivityManager.h"
 #import "BCCancelableImpl.h"
 #import "NSMutableArray+nonRetaining.h"
-#import "NSString+BCValidation.h"
+#import <BoldEngine/NSString+BCValidation.h>
 
 NSString *const BCFormFieldLanguage = @"language";
 NSString *const BCFormFieldDepartment = @"department";

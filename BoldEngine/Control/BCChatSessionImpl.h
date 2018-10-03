@@ -6,9 +6,9 @@
 #import <Foundation/Foundation.h>
 #import "BCChatSession.h"
 #import "BCChat.h"
-#import "BCPerson.h"
+#import <BoldEngine/BCPerson.h>
 #import "BCConnectivityManager.h"
-#import "BCCreateChatSessionDelegate.h"
+#import <BoldEngine/BCCreateChatSessionDelegate.h>
 
 @class BCChatSessionImpl;
 

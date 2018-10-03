@@ -6,8 +6,8 @@
 //  Copyright (c) 2014 LogMeIn Inc. All rights reserved.
 //
 
-#import "BCFormField.h"
-#import "BCFormFieldOption.h"
+#import <BoldEngine/BCFormField.h>
+#import <BoldEngine/BCFormFieldOption.h>
 
 @interface BCFormFieldParser : NSObject
 

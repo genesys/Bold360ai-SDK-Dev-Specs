@@ -18,7 +18,7 @@
 #import "BCOSSUpdateTyperNotification.h"
 #import "BCOSSUpdateChatNotification.h"
 #import "BCOSSAutoMessageNotification.h"
-#import "BCMessage.h"
+#import <BoldEngine/BCMessage.h>
 #import "BCErrorCodes.h"
 
 /** @file */

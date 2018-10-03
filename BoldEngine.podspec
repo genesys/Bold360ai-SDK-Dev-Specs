@@ -6,7 +6,7 @@
 Pod::Spec.new do |s|
   s.name             = 'BoldEngine'
   s.version = '__version__'
-  s.summary          = 'Nanorep is an SDK that contains two main services: Search & Conversation.'
+  s.summary          = 'BoldEngine is an SDK that used as chat handler on bold ai.'
 
   s.description      = <<-DESC
     BoldEngine is an SDK that used as chat handler on bold ai.
@@ -32,5 +32,6 @@ s.vendored_frameworks = 'BoldEngine.framework'
 s.requires_arc = true
 s.ios.deployment_target  = '9.0'
 s.pod_target_xcconfig = { 'CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF' => 'NO' }
+s.libraries = ['icucore']
 
 end
