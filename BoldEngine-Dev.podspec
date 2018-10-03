@@ -15,7 +15,7 @@ Pod::Spec.new do |s|
   s.license = ''
   s.author           = 'Bold360'
   s.requires_arc = true
-  s.ios.deployment_target  = '9.0'
+  s.ios.deployment_target  = '8.0'
   
   s.source           = { :git => "https://bitbucket.3amlabs.net/scm/bold/mobile-bold-engine-ios.git", :tag => s.version.to_s }
   s.public_header_files = 'BoldEngine/**/*.h'
@@ -24,7 +24,9 @@ Pod::Spec.new do |s|
   s.libraries = ['icucore']
   s.pod_target_xcconfig     = { 
     'CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF' => 'NO',
-    'OTHER_LDFLAGS' => '$(inherited)'
+    'OTHER_LDFLAGS' => '$(inherited)',
+    'GCC_PREPROCESSOR_DEFINITIONS ' => '$(inherited)',
+    'HEADER_SEARCH_PATHS ' => '$(inherited)'
     }
 
 end
