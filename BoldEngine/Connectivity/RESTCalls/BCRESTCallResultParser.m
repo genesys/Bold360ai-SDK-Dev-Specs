@@ -1,5 +1,5 @@
 //
-//  BCRestCallResultParser.m
+//  BCRESTCallResultParser.m
 //  VisitorSDK
 //
 //  Created by Viktor Fabian on 3/28/14.
