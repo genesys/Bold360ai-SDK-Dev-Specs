@@ -45,7 +45,7 @@ FOUNDATION_EXPORT const unsigned char BoldEngineVersionString[];
 #import "BCCall.h"
 #import "BCRESTCall.h"
 #import "BCRESTCallResult.h"
-#import "BCRestCallResultParser.h"
+#import "BCRESTCallResultParser.h"
 #import "BCChangeLanguageCall.h"
 #import "BCChangeLanguageCallParser.h"
 #import "BCChangeLanguageCallResult.h"
