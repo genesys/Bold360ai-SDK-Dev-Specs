@@ -51,7 +51,7 @@
 		48029C07214A9893000AA82C /* BCSubmitUnavailableEmailCall.h in Headers */ = {isa = PBXBuildFile; fileRef = 48029B5A214A9892000AA82C /* BCSubmitUnavailableEmailCall.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		48029C08214A9893000AA82C /* BCSubmitUnavailableEmailCallResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 48029B5B214A9892000AA82C /* BCSubmitUnavailableEmailCallResult.m */; };
 		48029C09214A9893000AA82C /* BCSubmitUnavailableEmailCallParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 48029B5C214A9892000AA82C /* BCSubmitUnavailableEmailCallParser.m */; };
-		48029C0A214A9893000AA82C /* BCRestCallResultParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 48029B5D214A9892000AA82C /* BCRestCallResultParser.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		48029C0A214A9893000AA82C /* BCRESTCallResultParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 48029B5D214A9892000AA82C /* BCRESTCallResultParser.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		48029C0B214A9893000AA82C /* BCChangeLanguageCallResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 48029B5F214A9892000AA82C /* BCChangeLanguageCallResult.m */; };
 		48029C0C214A9893000AA82C /* BCChangeLanguageCall.h in Headers */ = {isa = PBXBuildFile; fileRef = 48029B60214A9892000AA82C /* BCChangeLanguageCall.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		48029C0D214A9893000AA82C /* BCChangeLanguageCallParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 48029B61214A9892000AA82C /* BCChangeLanguageCallParser.m */; };
@@ -99,7 +99,7 @@
 		48029C37214A9893000AA82C /* BCSubmitPostChatCallResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 48029B92214A9892000AA82C /* BCSubmitPostChatCallResult.m */; };
 		48029C38214A9893000AA82C /* BCSubmitPostChatCallParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 48029B93214A9892000AA82C /* BCSubmitPostChatCallParser.m */; };
 		48029C39214A9893000AA82C /* BCSubmitPostChatCall.m in Sources */ = {isa = PBXBuildFile; fileRef = 48029B94214A9892000AA82C /* BCSubmitPostChatCall.m */; };
-		48029C3A214A9893000AA82C /* BCRestCallResultParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 48029B95214A9892000AA82C /* BCRestCallResultParser.m */; };
+		48029C3A214A9893000AA82C /* BCRESTCallResultParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 48029B95214A9892000AA82C /* BCRESTCallResultParser.m */; };
 		48029C3B214A9893000AA82C /* BCChatRecovery.m in Sources */ = {isa = PBXBuildFile; fileRef = 48029B97214A9892000AA82C /* BCChatRecovery.m */; };
 		48029C3C214A9893000AA82C /* BCChatRecovery.h in Headers */ = {isa = PBXBuildFile; fileRef = 48029B98214A9892000AA82C /* BCChatRecovery.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		48029C3D214A9893000AA82C /* BCHTTPConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 48029B9A214A9892000AA82C /* BCHTTPConnection.m */; };
@@ -258,7 +258,7 @@
 		48029B5A214A9892000AA82C /* BCSubmitUnavailableEmailCall.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BCSubmitUnavailableEmailCall.h; sourceTree = "<group>"; };
 		48029B5B214A9892000AA82C /* BCSubmitUnavailableEmailCallResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BCSubmitUnavailableEmailCallResult.m; sourceTree = "<group>"; };
 		48029B5C214A9892000AA82C /* BCSubmitUnavailableEmailCallParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BCSubmitUnavailableEmailCallParser.m; sourceTree = "<group>"; };
-		48029B5D214A9892000AA82C /* BCRestCallResultParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BCRestCallResultParser.h; sourceTree = "<group>"; };
+		48029B5D214A9892000AA82C /* BCRESTCallResultParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BCRESTCallResultParser.h; sourceTree = "<group>"; };
 		48029B5F214A9892000AA82C /* BCChangeLanguageCallResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BCChangeLanguageCallResult.m; sourceTree = "<group>"; };
 		48029B60214A9892000AA82C /* BCChangeLanguageCall.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BCChangeLanguageCall.h; sourceTree = "<group>"; };
 		48029B61214A9892000AA82C /* BCChangeLanguageCallParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BCChangeLanguageCallParser.m; sourceTree = "<group>"; };
@@ -306,7 +306,7 @@
 		48029B92214A9892000AA82C /* BCSubmitPostChatCallResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BCSubmitPostChatCallResult.m; sourceTree = "<group>"; };
 		48029B93214A9892000AA82C /* BCSubmitPostChatCallParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BCSubmitPostChatCallParser.m; sourceTree = "<group>"; };
 		48029B94214A9892000AA82C /* BCSubmitPostChatCall.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BCSubmitPostChatCall.m; sourceTree = "<group>"; };
-		48029B95214A9892000AA82C /* BCRestCallResultParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BCRestCallResultParser.m; sourceTree = "<group>"; };
+		48029B95214A9892000AA82C /* BCRESTCallResultParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BCRESTCallResultParser.m; sourceTree = "<group>"; };
 		48029B97214A9892000AA82C /* BCChatRecovery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BCChatRecovery.m; sourceTree = "<group>"; };
 		48029B98214A9892000AA82C /* BCChatRecovery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BCChatRecovery.h; sourceTree = "<group>"; };
 		48029B9A214A9892000AA82C /* BCHTTPConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BCHTTPConnection.m; sourceTree = "<group>"; };
@@ -485,7 +485,7 @@
 				48029B4E214A9892000AA82C /* BCRESTCall.m */,
 				48029B4F214A9892000AA82C /* FinishChatCall */,
 				48029B56214A9892000AA82C /* SubmitUnavailableEmailCall */,
-				48029B5D214A9892000AA82C /* BCRestCallResultParser.h */,
+				48029B5D214A9892000AA82C /* BCRESTCallResultParser.h */,
 				48029B5E214A9892000AA82C /* ChangeLanguageCall */,
 				48029B65214A9892000AA82C /* StartChatCall */,
 				48029B6C214A9892000AA82C /* GetChatAvailabilityCall */,
@@ -497,7 +497,7 @@
 				48029B84214A9892000AA82C /* FormFieldParser */,
 				48029B87214A9892000AA82C /* CreateChatCall */,
 				48029B8E214A9892000AA82C /* SubmitPostChatCall */,
-				48029B95214A9892000AA82C /* BCRestCallResultParser.m */,
+				48029B95214A9892000AA82C /* BCRESTCallResultParser.m */,
 			);
 			path = RESTCalls;
 			sourceTree = "<group>";
@@ -1005,7 +1005,6 @@
 				48029C41214A9893000AA82C /* BCHTTPConnection.h in Headers */,
 				48029C34214A9893000AA82C /* BCSubmitPostChatCallResult.h in Headers */,
 				48029C06214A9893000AA82C /* BCSubmitUnavailableEmailCallParser.h in Headers */,
-				48029C0A214A9893000AA82C /* BCRestCallResultParser.h in Headers */,
 				48029C20214A9893000AA82C /* BCSubmitPreChatCallResult.h in Headers */,
 				48029BE6214A9892000AA82C /* BCSendMessageCallParser.h in Headers */,
 				48029CD4214A98A3000AA82C /* BCAccount+ServerSet.h in Headers */,
@@ -1096,6 +1095,7 @@
 				48029C35214A9893000AA82C /* BCSubmitPostChatCallParser.h in Headers */,
 				48029BE0214A9892000AA82C /* BCLongPollCallParser.h in Headers */,
 				48029C53214A9893000AA82C /* BCOSSVisitorTypingCall.h in Headers */,
+				48029C0A214A9893000AA82C /* BCRESTCallResultParser.h in Headers */,
 				48029C47214A9893000AA82C /* BCOSSResponsePreProcessor.h in Headers */,
 				48029C3C214A9893000AA82C /* BCChatRecovery.h in Headers */,
 				48029CAA214A98A3000AA82C /* NSString+StrippingHtml.h in Headers */,
@@ -1245,7 +1245,7 @@
 				48029C6D214A9893000AA82C /* BCConnectivityManager.m in Sources */,
 				48029C3D214A9893000AA82C /* BCHTTPConnection.m in Sources */,
 				48029C04214A9893000AA82C /* BCSubmitUnavailableEmailCall.m in Sources */,
-				48029C3A214A9893000AA82C /* BCRestCallResultParser.m in Sources */,
+				48029C3A214A9893000AA82C /* BCRESTCallResultParser.m in Sources */,
 				48029CB1214A98A3000AA82C /* GTMNSString+BCURLArguments.m in Sources */,
 				48029BDF214A9892000AA82C /* BCRESTCallResult.m in Sources */,
 				48029C4F214A9893000AA82C /* BCOSSLongPollLink.m in Sources */,
@@ -1404,7 +1404,11 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = BoldEngine/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.bold.BoldEngine;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
@@ -1424,7 +1428,11 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = BoldEngine/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.bold.BoldEngine;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
