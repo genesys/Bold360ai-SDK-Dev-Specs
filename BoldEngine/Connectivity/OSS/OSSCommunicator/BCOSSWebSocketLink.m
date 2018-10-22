@@ -565,7 +565,8 @@ typedef enum {
 
 #pragma mark -
 #pragma mark BCOSSUpdateChatNotification
-- (void)ossUpdateChatNotification:(BCOSSUpdateChatNotification *)notification chatId:(NSString *)chatId endedAt:(NSDate *)endTime reason:(NSString *)reason {
+- (void)ossUpdateChatNotification:(BCOSSUpdateChatNotification *)notification chatId:(NSString *)chatId
+                         answered:(NSString *)answered endedAt:(NSDate *)endTime reason:(NSString *)reason {
     if (endTime && reason) {
         BCOSSLinkEndReason endReason = BCOSSLinkEndReasonUnknown;
         if ([reason isEqualToString:@"operator"]) {
@@ -578,6 +579,10 @@ typedef enum {
         if (self.state != BCOSSWebSocketLinkStateClosed) {
             [self close];
             [self.delegate ossLink:self didEndWithReason:endReason time:endTime error:nil];
+        }
+    } else if (answered) {
+        if (self.state != BCOSSWebSocketLinkStateClosed) {
+            [self.delegate ossLink:self didAcceptChat:answered];
         }
     }
 }

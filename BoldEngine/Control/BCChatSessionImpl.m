@@ -833,6 +833,10 @@ typedef enum {
     
 }
 
+- (void)bcChatDidAccept:(id<BCChat>)chat {
+    
+}
+
 - (void)bcChat:(id<BCChat>)chat didFinishWithReason:(BCChatEndReason)reason time:(NSDate *)date postChatForm:(BCForm *)postChatForm {
     self.postChatForm = postChatForm;
     BOOL needsPostChat = (postChatForm && postChatForm.formFields.count > 0);

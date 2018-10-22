@@ -29,6 +29,7 @@ typedef enum {
 - (void)ossLink:(BCOSSLink *)ossLink didFailToConnectWithError:(NSError *)error;
 
 - (void)ossLink:(BCOSSLink *)ossLink didReceivePerson:(BCPerson *)person typing:(BOOL)typing;
+- (void)ossLink:(BCOSSLink *)ossLink didAcceptChat:(NSString *)acceptTime;
 - (void)ossLink:(BCOSSLink *)ossLink didReceiveMessage:(BCMessage *)message;
 - (void)ossLink:(BCOSSLink *)ossLink didReceiveAutoMessage:(BCMessage *)message;
 

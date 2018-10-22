@@ -27,6 +27,7 @@ typedef enum {
 - (void)ossCommunicatorDidSucceedToConnect:(BCOSSCommunicator *)ossCommunicator;
 - (void)ossCommunicator:(BCOSSCommunicator *)ossCommunicator didFailToConnectWithError:(NSError *)error;
 
+- (void)ossCommunicator:(BCOSSCommunicator *)ossCommunicator didAcceptChat:(NSString *)acceptTime;
 - (void)ossCommunicator:(BCOSSCommunicator *)ossCommunicator didReceivePerson:(BCPerson *)person typing:(BOOL)typing;
 - (void)ossCommunicator:(BCOSSCommunicator *)ossCommunicator didReceiveMessage:(BCMessage *)message;
 - (void)ossCommunicator:(BCOSSCommunicator *)ossCommunicator didReceiveAutoMessage:(BCMessage *)message;
