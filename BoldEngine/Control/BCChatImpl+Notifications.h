@@ -62,6 +62,12 @@
 - (void)propagateDidConnect;
 
 /**
+ * @brief The chat is accepted.
+ * @since Version 1.0
+ */
+- (void)propagateDidAccept;
+
+/**
  * @brief The chat was finished successfully.
  * @param reason The reason of the finish.
  * @param time The time of the chat finish.

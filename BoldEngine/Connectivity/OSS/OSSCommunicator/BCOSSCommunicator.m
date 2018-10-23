@@ -399,6 +399,12 @@ typedef enum {
     [self.delegate ossCommunicator:self didEndWithReason:endReason time:date error:error];
 }
 
+- (void)ossLink:(BCOSSLink *)ossLink didAcceptChat:(NSString *)acceptTime {
+    if (acceptTime) {
+        [self.delegate ossCommunicator:self didAcceptChat:acceptTime];
+    }
+}
+
 - (void)ossLinkDidReset:(BCOSSLink *)ossLink {
     [self.delegate ossCommunicatorDidReset:self];
 }

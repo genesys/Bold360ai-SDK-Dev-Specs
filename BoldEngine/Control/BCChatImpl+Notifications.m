@@ -54,6 +54,12 @@
     }
 }
 
+- (void)propagateDidAccept {
+    for (id<BCChatStateDelegate>delegate in self.chatStateDelegates) {
+        [delegate bcChatDidAccept:self];
+    }
+}
+
 - (void)propagateDidFinishWithReason:(BCChatEndReason)reason time:(NSDate *)date postChatForm:(BCForm *)postChatForm{
     for (id<BCChatStateDelegate>delegate in self.chatStateDelegates) {
         [delegate bcChat:self didFinishWithReason:reason time:date postChatForm:postChatForm];
