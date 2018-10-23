@@ -32,15 +32,27 @@ Pod::Spec.new do |s|
     # ]
 
 s.source = {
-"http" => "https://dl.bintray.com/nanorep/Specs-Dev/NanorepUI_version_v2.0.0.rc1_commit_6c1db76e4d8bd950a9305fd64e5a0c0d32794152.zip"
+"http" => "https://dl.bintray.com/nanorep/Specs-Dev/NanorepUI_version_v2.0.0.rc3_commit_dda57d7adac3fed232f5690e7627715a9b0c79c9.zip"
 }
-  s.vendored_frameworks = 'NanorepUI.framework'
-  s.requires_arc = true
+
 s.ios.deployment_target  = '9.0'
 
-# Private Pod frameworks
-s.dependency 'NanorepEngine'
-s.dependency 'NRAccessibility'
-s.pod_target_xcconfig = { 'CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF' => 'NO' }
+s.subspec 'Core' do |sp|
+  sp.vendored_frameworks = 'NanorepUI.framework'
+  sp.requires_arc = true
+
+  # Private Pod frameworks
+  sp.dependency 'NanorepEngine'
+  sp.dependency 'NRAccessibility'
+  sp.pod_target_xcconfig = { 'CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF' => 'NO' }
+end
+
+s.subspec 'Bold' do |ssp|
+# TODO:: add boldHandler from external repo
+  ssp.dependency 'NanorepUI/Core'
+  ssp.dependency 'BoldEngine'
+end
+
+s.default_subspec = 'Core'
 
 end
