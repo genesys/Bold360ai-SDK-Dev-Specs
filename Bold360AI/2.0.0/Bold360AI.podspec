@@ -26,7 +26,7 @@ Pod::Spec.new do |s|
     # ]
 
 s.source = {
-"http" => "https://dl.bintray.com/nanorep/Specs-Dev/Bold360AI_version_v2.0.0.rc1_commit_f0fc81f69b7853d11b7de2ec0b9a838905b1ac5b.zip"
+"http" => "https://dl.bintray.com/nanorep/Specs-Dev/Bold360AI_version_v2.0.0.rc2_commit_72ae22021c749876d506d0b049fabb897cdb5c23.zip"
 }
   
 s.vendored_frameworks = 'Bold360AI.framework'
