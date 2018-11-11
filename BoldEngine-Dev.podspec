@@ -6,7 +6,7 @@
 Pod::Spec.new do |s|
   s.name             = 'BoldEngine'
   s.version = '1.0.x-dev'
-  s.summary          = 'BoldEngine is an SDK that contains bold chat handler.'
+  s.summary          = 'BoldEngine is an SDK that contains bold handler.'
   s.description      = <<-DESC
     BoldEngine is an SDK that contains bold chat handler.
                        DESC
