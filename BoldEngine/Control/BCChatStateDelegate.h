@@ -47,7 +47,7 @@ typedef enum {
 /**
  * @brief The chat was accepted by the agent (triggered only once).
  * @param chat The chat which the callback is originated from.
- * @since Version 3.0
+ * @since Version 2.0
  */
 - (void)bcChatDidAccept:(id<BCChat>)chat;
 
