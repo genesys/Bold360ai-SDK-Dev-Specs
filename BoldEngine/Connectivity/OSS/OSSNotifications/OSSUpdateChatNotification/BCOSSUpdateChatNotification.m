@@ -40,8 +40,13 @@
                     endDate = [formatter dateFromString:endedValue];
                 }
             }
+            
+            [self.delegate ossUpdateChatNotification:self
+                                              chatId:chatId
+                                            answered:answered
+                                             endedAt:endDate
+                                              reason:endReason];
         }
-        [self.delegate ossUpdateChatNotification:self chatId:chatId answered:answered endedAt:endDate reason:endReason];
         return YES;
     } else {
         return NO;

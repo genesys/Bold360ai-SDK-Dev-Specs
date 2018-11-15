@@ -431,7 +431,7 @@ typedef enum {
     NSDictionary *resultDictionary = [array[1] isKindOfClass:[NSNull class]] ? nil : array[1];
 //#if DEBUG
     NSLog(@"Message:\n%@",resultDictionary);
-//jkhg#endif
+//#endif
     self.lastMessageTime = [[NSDate date] timeIntervalSince1970];
     if (!resultDictionary) return;
     
