@@ -824,8 +824,9 @@ The time in seconds that states if an operator did not send a message to the cli
 }
 
 - (void)ossCommunicator:(BCOSSCommunicator *)ossCommunicator didAcceptChat:(NSString *)acceptTime {
-    if (acceptTime) {
+    if (acceptTime && !self.answered) {
         [self propagateDidAccept];
+        self.answered = YES;
     }
 }
 

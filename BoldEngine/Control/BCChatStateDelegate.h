@@ -45,9 +45,9 @@ typedef enum {
 - (void)bcChat:(id<BCChat>)chat didFinishWithReason:(BCChatEndReason)reason time:(NSDate *)time postChatForm:(BCForm *)postChatForm;
 
 /**
- * @brief The chat accepted.
+ * @brief The chat was accepted by the agent (triggered only once).
  * @param chat The chat which the callback is originated from.
- * @since Version 1.0
+ * @since Version 3.0
  */
 - (void)bcChatDidAccept:(id<BCChat>)chat;
 
