@@ -30,12 +30,6 @@
 @property(nonatomic, assign) BOOL isMultiline;
 
 /**
- The title label text of the field.
- @since Version 1.0
- */
-@property(nonatomic, copy) NSString *label;
-
-/**
  The localized label text to display.
  @since Version 1.0
  */

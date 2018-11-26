@@ -23,4 +23,11 @@
     return matches;
 }
 
+- (BOOL)bcIsValidAlphabets {
+    NSString *abnRegex = @"[A-Za-z]+";
+    NSPredicate *abnTest = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", abnRegex];
+    BOOL isValid = [abnTest evaluateWithObject:self];
+    return isValid;
+}
+
 @end

@@ -48,7 +48,7 @@ typedef enum {
  * @brief The prompt label for the form field.
  * @since Version 1.0
  */
-@property(nonatomic, copy, readonly)NSString *label;
+@property(nonatomic, copy)NSString *label;
 
 /**
  * @brief The branding value key that should be used for the label, or null if this is a custom field.  If this returns nil then label should be used instead.
