@@ -56,7 +56,9 @@
 
 - (void)propagateDidAccept {
     for (id<BCChatStateDelegate>delegate in self.chatStateDelegates) {
-        [delegate bcChatDidAccept:self];
+        if ([delegate respondsToSelector:@selector(bcChatDidAccept:)]) {
+            [delegate bcChatDidAccept:self];
+        }
     }
 }
 
