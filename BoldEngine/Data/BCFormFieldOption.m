@@ -46,12 +46,6 @@
  */
 @property(nonatomic, assign)BOOL isAvailable;
 
-/**
- The text to be displayed about the availability state.
- @since Version 1.0
- */
-@property(nonatomic, copy)NSString *availableLabel;
-
 @end
 
 @implementation BCFormFieldOption
