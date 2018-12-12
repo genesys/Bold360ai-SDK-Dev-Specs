@@ -23,6 +23,13 @@
 @property(nonatomic, copy)NSString *language;
 @property(nonatomic, assign)BOOL includeBrandingValues;
 @property(nonatomic, assign)BOOL skipPreChat;
+
+/**
+ * @brief An encrypted list of parameters that validate the caller of the API.
+ * @since Version 1.1
+ */
+
+@property(nonatomic, copy)NSString *secured;
 @property(nonatomic, strong)NSDictionary *data;
 @property(nonatomic, assign)id<BCCreateChatCallDelegate> delegate;
 

@@ -668,12 +668,12 @@
 		48029B87214A9892000AA82C /* CreateChatCall */ = {
 			isa = PBXGroup;
 			children = (
+				48029B8B214A9892000AA82C /* BCCreateChatCallResult.h */,
 				48029B88214A9892000AA82C /* BCCreateChatCallResult.m */,
+				48029B8D214A9892000AA82C /* BCCreateChatCall.h */,
 				48029B89214A9892000AA82C /* BCCreateChatCall.m */,
 				48029B8A214A9892000AA82C /* BCCreateChatCallParser.m */,
-				48029B8B214A9892000AA82C /* BCCreateChatCallResult.h */,
 				48029B8C214A9892000AA82C /* BCCreateChatCallParser.h */,
-				48029B8D214A9892000AA82C /* BCCreateChatCall.h */,
 			);
 			path = CreateChatCall;
 			sourceTree = "<group>";
@@ -935,29 +935,29 @@
 			children = (
 				48029C81214A98A2000AA82C /* BCChatAvailabilityChecker.m */,
 				48029C82214A98A2000AA82C /* BCCancelableImpl.h */,
+				48029C90214A98A2000AA82C /* BCCancelableImpl.m */,
 				48029C83214A98A2000AA82C /* BCChatStateDelegate.h */,
 				48029C84214A98A2000AA82C /* BCErrorCodes.h */,
 				48029C85214A98A2000AA82C /* BCChatImpl+Notifications.m */,
 				48029C86214A98A2000AA82C /* BCSubmitPostChatDelegate.h */,
 				48029C87214A98A2000AA82C /* BCAccount.h */,
+				48029C93214A98A2000AA82C /* BCAccount.m */,
 				48029C88214A98A2000AA82C /* BCChatMessageDelegate.h */,
 				48029C89214A98A2000AA82C /* BCChatSessionImpl.h */,
+				48029C99214A98A2000AA82C /* BCChatSessionImpl.m */,
 				48029C8A214A98A2000AA82C /* BCUnavailableReason.h */,
 				48029C8B214A98A2000AA82C /* BCChatTyperDelegate.h */,
 				48029C8C214A98A2000AA82C /* BCChatImpl.h */,
 				48029C8D214A98A2000AA82C /* BCSubmitUnavailableEmailDelegate.h */,
 				48029C8E214A98A2000AA82C /* BCChatRecaptureDelegate.h */,
 				48029C8F214A98A2000AA82C /* BCEmailChatHistoryDelegate.h */,
-				48029C90214A98A2000AA82C /* BCCancelableImpl.m */,
 				48029C91214A98A2000AA82C /* BCChatAvailabilityChecker.h */,
 				48029C92214A98A2000AA82C /* BCCreateChatSessionDelegate.h */,
-				48029C93214A98A2000AA82C /* BCAccount.m */,
 				48029C94214A98A2000AA82C /* BCChatImpl+Notifications.h */,
 				48029C95214A98A2000AA82C /* BCSubmitPreChatDelegate.h */,
 				48029C96214A98A2000AA82C /* BCChangeLanguageDelegate.h */,
 				48029C97214A98A2000AA82C /* BCChatAvailability.h */,
 				48029C98214A98A2000AA82C /* BCChatQueueDelegate.h */,
-				48029C99214A98A2000AA82C /* BCChatSessionImpl.m */,
 				48029C9A214A98A2000AA82C /* BCChat.h */,
 				48029C9B214A98A2000AA82C /* BCAccount+ServerSet.h */,
 				48029C9C214A98A2000AA82C /* BCChatImpl.m */,
@@ -1405,7 +1405,11 @@
 				INFOPLIST_FILE = BoldEngine/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.bold.BoldEngine;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
@@ -1426,7 +1430,11 @@
 				INFOPLIST_FILE = BoldEngine/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.bold.BoldEngine;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;

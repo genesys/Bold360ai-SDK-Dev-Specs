@@ -30,44 +30,44 @@ NSString *const BCFormFieldComments = @"comments";
 NSString *const BCFormFieldCustomUrl = @"CustomUrl";
 
 /**
- BCAccount private interface.
- @since Version 1.0
+ * @brief BCAccount private interface.
+ * @since Version 1.0
  */
 @interface BCAccount () <BCCancelableImplDelegate, BCChatSessionImplCreationDelegate>
 
 /**
- The access key for the SDK.
- @since Version 1.0
+ * @brief The access key for the SDK.
+ * @since Version 1.0
  */
 @property (nonatomic, copy) NSString *accessKey;
 
 /**
- Connectivity manager for the network calls. The same connectivity manager is used for the chat sessions and the availability ckeckers.
- @since Version 1.0
+ * @brief Connectivity manager for the network calls. The same connectivity manager is used for the chat sessions and the availability ckeckers.
+ * @since Version 1.0
  */
 @property (nonatomic, strong) BCConnectivityManager *connectivityManager;
 
 /**
- The availability checkers per visitorId.
- @since Version 1.0
+ * @brief The availability checkers per visitorId.
+ * @since Version 1.0
  */
 @property (nonatomic, strong) NSMutableDictionary *availabilityCheckers;
 
 /**
- The chat session being created.
- @since Version 1.0
+ * @brief The chat session being created.
+ * @since Version 1.0
  */
 @property (nonatomic, strong) NSMutableArray *chatSessionsBeingCreated;
 
 /**
- The chat session being created.
- @since Version 1.0
+ * @brief The chat session being created.
+ * @since Version 1.0
  */
 @property (nonatomic, strong) NSMutableArray *cancelablesOfChatSessions;
 
 /**
- The create chat delegates.
- @since Version 1.0
+ * @brief The create chat delegates.
+ * @since Version 1.0
  */
 @property (nonatomic, strong) NSMutableArray *createChatDelegates;
 
@@ -126,6 +126,35 @@ NSString *const BCFormFieldCustomUrl = @"CustomUrl";
 }
 
 - (id<BCCancelable>)createChatSessionWithDelegate:(id<BCCreateChatSessionDelegate>)delegate language:(NSString *)language visitorId:(NSString *)visitorId skipPreChat:(BOOL)skipPreChat externalParams:(NSDictionary *)externalParams {
+    return [self createSecuredChatSessionWithDelegate:delegate language:language visitorId:visitorId skipPreChat:skipPreChat externalParams:externalParams securedParams:nil];
+}
+
+- (id<BCCancelable>)getChatAvailabilityWithDelegate:(id<BCChatAvailabilityDelegate>)delegate {
+    return [self getChatAvailabilityWithDelegate:delegate visitorId:nil];
+}
+
+- (id<BCCancelable>)getChatAvailabilityWithDelegate:(id<BCChatAvailabilityDelegate>)delegate visitorId:(NSString *)visitorId {
+    BCChatAvailabilityChecker *checker = self.availabilityCheckers[visitorId ? visitorId : [NSNull null]];
+    if (!checker) {
+        checker = [[BCChatAvailabilityChecker alloc] initWithConnectivityManager:self.connectivityManager visitorId:visitorId];
+        self.availabilityCheckers[visitorId ? visitorId : [NSNull null]] = checker;
+    }
+    BCCancelableImpl *cancelable = [[BCCancelableImpl alloc] initWithDelegate:checker];
+    [checker requestAvailabilityWithCancelable:cancelable delegate:delegate];
+    return cancelable;
+}
+
+- (id<BCCancelable>)createSecuredChatSessionWithDelegate:(id<BCCreateChatSessionDelegate>)delegate language:(NSString *)language securedParams:(NSString *)securedParams {
+    return [self createSecuredChatSessionWithDelegate:delegate language:language visitorId:nil skipPreChat:NO externalParams:nil securedParams:securedParams];
+}
+
+
+- (id<BCCancelable>)createSecuredChatSessionWithDelegate:(id<BCCreateChatSessionDelegate>)delegate
+                                                language:(NSString *)language
+                                               visitorId:(NSString *)visitorId
+                                             skipPreChat:(BOOL)skipPreChat
+                                          externalParams:(NSDictionary *)externalParams
+                                           securedParams:(NSString *)securedParams {
     if (externalParams && externalParams[BCFormFieldEmail]) {
         NSString *emailString = externalParams[BCFormFieldEmail];
         if (![emailString bcIsValidEmailAddress]) {
@@ -146,28 +175,14 @@ NSString *const BCFormFieldCustomUrl = @"CustomUrl";
     }
     
     BCCancelableImpl *cancelable = [[BCCancelableImpl alloc] initWithDelegate:self];
-    BCChatSessionImpl *chatSessionImp = [BCChatSessionImpl chatSessionImplWithAccountId:self.connectivityManager.accountId accessKey:self.connectivityManager.accessKey connectivityManager:self.connectivityManager language:language visitorId:visitorId skipPreChat:skipPreChat data:externalParams];
+    BCChatSessionImpl *chatSessionImp = [BCChatSessionImpl chatSessionImplWithAccountId:self.connectivityManager.accountId accessKey:self.connectivityManager.accessKey connectivityManager:self.connectivityManager language:language visitorId:visitorId skipPreChat:skipPreChat data:externalParams securedParams:securedParams];
+
     
     [self.cancelablesOfChatSessions addObject:cancelable];
     [self.chatSessionsBeingCreated addObject:chatSessionImp];
     [self.createChatDelegates addObject:delegate];
     
     [chatSessionImp createChatWithDelegate:self];
-    return cancelable;
-}
-
-- (id<BCCancelable>)getChatAvailabilityWithDelegate:(id<BCChatAvailabilityDelegate>)delegate {
-    return [self getChatAvailabilityWithDelegate:delegate visitorId:nil];
-}
-
-- (id<BCCancelable>)getChatAvailabilityWithDelegate:(id<BCChatAvailabilityDelegate>)delegate visitorId:(NSString *)visitorId {
-    BCChatAvailabilityChecker *checker = self.availabilityCheckers[visitorId ? visitorId : [NSNull null]];
-    if (!checker) {
-        checker = [[BCChatAvailabilityChecker alloc] initWithConnectivityManager:self.connectivityManager visitorId:visitorId];
-        self.availabilityCheckers[visitorId ? visitorId : [NSNull null]] = checker;
-    }
-    BCCancelableImpl *cancelable = [[BCCancelableImpl alloc] initWithDelegate:checker];
-    [checker requestAvailabilityWithCancelable:cancelable delegate:delegate];
     return cancelable;
 }
 
