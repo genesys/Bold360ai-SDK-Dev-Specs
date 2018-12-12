@@ -20,6 +20,7 @@
 @synthesize language = _language;
 @synthesize includeBrandingValues = _includeBrandingValues;
 @synthesize skipPreChat = _skipPreChat;
+@synthesize secured = _secured;
 @synthesize data = _data;
 @synthesize delegate = _delegate;
 
@@ -32,7 +33,7 @@
     paramsDictionary[@"Language"] = self.language ? self.language : @"en-US";
     paramsDictionary[@"IncludeBrandingValues"] = self.includeBrandingValues ? @"true" : @"false";
     paramsDictionary[@"SkipPreChat"] = self.skipPreChat ? @"true" : @"false";
-    
+    if (self.secured) paramsDictionary[@"Secured"] = self.secured;
     NSString *customUrl = self.data[BCFormFieldCustomUrl];
     //Custom URL is sent in a separate parameter
     if (customUrl.length) {

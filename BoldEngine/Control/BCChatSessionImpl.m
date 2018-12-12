@@ -224,6 +224,13 @@ typedef enum {
 @property (nonatomic, strong)NSDictionary *data;
 
 /**
+ An encrypted list of parameters that validate the caller of the API.
+ @since Version 1.1
+ */
+@property (nonatomic, strong)NSString *securedParams;
+
+
+/**
  The delegate for create chat call result.
  @since Version 1.0
  */
@@ -375,6 +382,7 @@ typedef enum {
 @synthesize visitor = _visitor;
 @synthesize skipPreChat = _skipPreChat;
 @synthesize data = _data;
+@synthesize securedParams = _securedParams;
 
 @synthesize preChatForm = _preChatForm;
 @synthesize postChatForm = _postChatForm;
@@ -414,14 +422,16 @@ typedef enum {
                           language:(NSString *)language
                          visitorId:(NSString *)visitorId
                        skipPreChat:(BOOL)skipPreChat
-                              data:(NSDictionary *)data{
+                              data:(NSDictionary *)data
+                     securedParams:(NSString *)securedParams {
     return [[[self class] alloc] initWithAccountId:accountId
                                          accessKey:accessKey
                                connectivityManager:connectivityManager
                                           language:language
                                          visitorId:visitorId
                                        skipPreChat:skipPreChat
-                                              data:data];
+                                              data:data
+                                     securedParams:securedParams];
 }
 
 - (id)initWithAccountId:(NSString *)accountId
@@ -430,7 +440,9 @@ typedef enum {
                language:(NSString *)language
               visitorId:(NSString *)visitorId
             skipPreChat:(BOOL)skipPreChat
-                   data:(NSDictionary *)data{
+                   data:(NSDictionary *)data
+          securedParams:(NSString *)securedParams {
+
     if ((self = [self init])) {
         self.accountId = accountId;
         self.accessKey = accessKey;
@@ -444,6 +456,7 @@ typedef enum {
         
         self.skipPreChat = skipPreChat;
         self.data = data;
+        self.securedParams = securedParams;
     }
     return self;
 }
@@ -465,6 +478,7 @@ typedef enum {
     self.createChatCall.includeBrandingValues = YES;
     self.createChatCall.skipPreChat = _skipPreChat;
     self.createChatCall.data = _data;
+    self.createChatCall.secured = self.securedParams;
     self.createChatCall.delegate = self;
     [self.createChatCall start];
 }
