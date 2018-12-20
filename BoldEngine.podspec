@@ -35,4 +35,7 @@ s.ios.deployment_target  = '9.0'
 s.pod_target_xcconfig = { 'CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF' => 'NO' }
 s.libraries = ['icucore']
 
+# Private Pod frameworks
+s.dependency 'BoldCore'
+
 end
