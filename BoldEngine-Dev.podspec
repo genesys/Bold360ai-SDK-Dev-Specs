@@ -29,4 +29,7 @@ Pod::Spec.new do |s|
     'HEADER_SEARCH_PATHS ' => '$(inherited)'
     }
 
+# Private Pod frameworks
+s.dependency 'BoldCore'
+
 end

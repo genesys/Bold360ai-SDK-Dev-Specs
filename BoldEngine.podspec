@@ -6,7 +6,7 @@
 Pod::Spec.new do |s|
   s.name             = 'BoldEngine'
   s.version = '__version__'
-  s.summary          = 'BoldEngine is an SDK that used as chat handler on bold ai.'
+  s.summary = 'BoldEngine is an SDK that used as chat handler on bold ai.'
 
   s.description      = <<-DESC
     BoldEngine is an SDK that used as chat handler on bold ai.
@@ -34,5 +34,8 @@ s.requires_arc = true
 s.ios.deployment_target  = '9.0'
 s.pod_target_xcconfig = { 'CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF' => 'NO' }
 s.libraries = ['icucore']
+
+# Private Pod frameworks
+s.dependency 'BoldCore'
 
 end
