@@ -3,7 +3,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <Bold360Core/Account.h>
+#import <BoldCore/Account.h>
 
 @protocol BCChatSession;
 @protocol BCCancelable;
