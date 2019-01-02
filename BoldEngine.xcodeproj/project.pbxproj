@@ -209,7 +209,18 @@
 		48029CE0214A98A3000AA82C /* BCMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 48029CA8214A98A2000AA82C /* BCMessage.m */; };
 		48029CE1214A98A3000AA82C /* BCForm.h in Headers */ = {isa = PBXBuildFile; fileRef = 48029CA9214A98A2000AA82C /* BCForm.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		48029CE4214A9925000AA82C /* libicucore.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 48029CE3214A9925000AA82C /* libicucore.tbd */; };
+		488C59AD21CA762900E05369 /* Bold360Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 488C59AC21CA761C00E05369 /* Bold360Core.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		488C59AB21CA761C00E05369 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 488C59A721CA761B00E05369 /* Bold360Core.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 4846C6FD21CA40280020DB7F;
+			remoteInfo = Bold360Core;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		480297A2214A96EF000AA82C /* BoldEngine.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BoldEngine.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -416,6 +427,7 @@
 		48029CA8214A98A2000AA82C /* BCMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BCMessage.m; sourceTree = "<group>"; };
 		48029CA9214A98A2000AA82C /* BCForm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BCForm.h; sourceTree = "<group>"; };
 		48029CE3214A9925000AA82C /* libicucore.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libicucore.tbd; path = usr/lib/libicucore.tbd; sourceTree = SDKROOT; };
+		488C59A721CA761B00E05369 /* Bold360Core.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Bold360Core.xcodeproj; path = ../Bold360Core/Bold360Core.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -424,6 +436,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				48029CE4214A9925000AA82C /* libicucore.tbd in Frameworks */,
+				488C59AD21CA762900E05369 /* Bold360Core.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -433,6 +446,7 @@
 		48029798214A96EF000AA82C = {
 			isa = PBXGroup;
 			children = (
+				488C59A721CA761B00E05369 /* Bold360Core.xcodeproj */,
 				480297A4214A96EF000AA82C /* BoldEngine */,
 				480297A3214A96EF000AA82C /* Products */,
 				48029CE2214A9924000AA82C /* Frameworks */,
@@ -475,29 +489,29 @@
 		48029B2A214A9892000AA82C /* RESTCalls */ = {
 			isa = PBXGroup;
 			children = (
-				48029B2B214A9892000AA82C /* BCRESTCallResult.m */,
 				48029B2C214A9892000AA82C /* LongPollCall */,
 				48029B31214A9892000AA82C /* SendMessageCall */,
 				48029B38214A9892000AA82C /* EmailChatHistoryCall */,
 				48029B3F214A9892000AA82C /* VisitorTypingCall */,
 				48029B46214A9892000AA82C /* PingChatCall */,
-				48029B4D214A9892000AA82C /* BCCall.m */,
-				48029B4E214A9892000AA82C /* BCRESTCall.m */,
 				48029B4F214A9892000AA82C /* FinishChatCall */,
 				48029B56214A9892000AA82C /* SubmitUnavailableEmailCall */,
 				48029B5D214A9892000AA82C /* BCRESTCallResultParser.h */,
+				48029B2B214A9892000AA82C /* BCRESTCallResult.m */,
 				48029B5E214A9892000AA82C /* ChangeLanguageCall */,
 				48029B65214A9892000AA82C /* StartChatCall */,
 				48029B6C214A9892000AA82C /* GetChatAvailabilityCall */,
 				48029B73214A9892000AA82C /* BCRESTCallResult.h */,
+				48029B95214A9892000AA82C /* BCRESTCallResultParser.m */,
 				48029B74214A9892000AA82C /* BCRESTCall.h */,
+				48029B4E214A9892000AA82C /* BCRESTCall.m */,
 				48029B75214A9892000AA82C /* BCCall.h */,
+				48029B4D214A9892000AA82C /* BCCall.m */,
 				48029B76214A9892000AA82C /* SubmitPreFormCall */,
 				48029B7D214A9892000AA82C /* GetUnavailableFormCall */,
 				48029B84214A9892000AA82C /* FormFieldParser */,
 				48029B87214A9892000AA82C /* CreateChatCall */,
 				48029B8E214A9892000AA82C /* SubmitPostChatCall */,
-				48029B95214A9892000AA82C /* BCRESTCallResultParser.m */,
 			);
 			path = RESTCalls;
 			sourceTree = "<group>";
@@ -911,21 +925,21 @@
 			isa = PBXGroup;
 			children = (
 				48029C70214A98A2000AA82C /* NSString+StrippingHtml.h */,
-				48029C71214A98A2000AA82C /* BCBuiltInLocalisation.h */,
-				48029C72214A98A2000AA82C /* NSMutableArray+nonRetaining.h */,
-				48029C73214A98A2000AA82C /* NSObject+nilOrValue.h */,
-				48029C74214A98A2000AA82C /* NSString+RandomIdentifier.h */,
-				48029C75214A98A2000AA82C /* BCTimer.m */,
-				48029C76214A98A2000AA82C /* NSString+BCValidation.m */,
-				48029C77214A98A2000AA82C /* GTMNSString+BCURLArguments.m */,
-				48029C78214A98A2000AA82C /* NSObject+nilOrValue.m */,
-				48029C79214A98A2000AA82C /* NSMutableArray+nonRetaining.m */,
-				48029C7A214A98A2000AA82C /* BCBuiltInLocalisation.m */,
 				48029C7B214A98A2000AA82C /* NSString+StrippingHtml.m */,
-				48029C7C214A98A2000AA82C /* GTMNSString+BCURLArguments.h */,
-				48029C7D214A98A2000AA82C /* NSString+BCValidation.h */,
-				48029C7E214A98A2000AA82C /* BCTimer.h */,
+				48029C71214A98A2000AA82C /* BCBuiltInLocalisation.h */,
+				48029C7A214A98A2000AA82C /* BCBuiltInLocalisation.m */,
+				48029C72214A98A2000AA82C /* NSMutableArray+nonRetaining.h */,
+				48029C79214A98A2000AA82C /* NSMutableArray+nonRetaining.m */,
+				48029C73214A98A2000AA82C /* NSObject+nilOrValue.h */,
+				48029C78214A98A2000AA82C /* NSObject+nilOrValue.m */,
+				48029C74214A98A2000AA82C /* NSString+RandomIdentifier.h */,
 				48029C7F214A98A2000AA82C /* NSString+RandomIdentifier.m */,
+				48029C7D214A98A2000AA82C /* NSString+BCValidation.h */,
+				48029C76214A98A2000AA82C /* NSString+BCValidation.m */,
+				48029C7C214A98A2000AA82C /* GTMNSString+BCURLArguments.h */,
+				48029C77214A98A2000AA82C /* GTMNSString+BCURLArguments.m */,
+				48029C7E214A98A2000AA82C /* BCTimer.h */,
+				48029C75214A98A2000AA82C /* BCTimer.m */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -933,34 +947,34 @@
 		48029C80214A98A2000AA82C /* Control */ = {
 			isa = PBXGroup;
 			children = (
-				48029C81214A98A2000AA82C /* BCChatAvailabilityChecker.m */,
-				48029C82214A98A2000AA82C /* BCCancelableImpl.h */,
-				48029C90214A98A2000AA82C /* BCCancelableImpl.m */,
-				48029C83214A98A2000AA82C /* BCChatStateDelegate.h */,
-				48029C84214A98A2000AA82C /* BCErrorCodes.h */,
-				48029C85214A98A2000AA82C /* BCChatImpl+Notifications.m */,
-				48029C86214A98A2000AA82C /* BCSubmitPostChatDelegate.h */,
-				48029C87214A98A2000AA82C /* BCAccount.h */,
-				48029C93214A98A2000AA82C /* BCAccount.m */,
-				48029C88214A98A2000AA82C /* BCChatMessageDelegate.h */,
 				48029C89214A98A2000AA82C /* BCChatSessionImpl.h */,
 				48029C99214A98A2000AA82C /* BCChatSessionImpl.m */,
+				48029C94214A98A2000AA82C /* BCChatImpl+Notifications.h */,
+				48029C85214A98A2000AA82C /* BCChatImpl+Notifications.m */,
+				48029C82214A98A2000AA82C /* BCCancelableImpl.h */,
+				48029C90214A98A2000AA82C /* BCCancelableImpl.m */,
+				48029C8C214A98A2000AA82C /* BCChatImpl.h */,
+				48029C9C214A98A2000AA82C /* BCChatImpl.m */,
+				48029C87214A98A2000AA82C /* BCAccount.h */,
+				48029C93214A98A2000AA82C /* BCAccount.m */,
+				48029C91214A98A2000AA82C /* BCChatAvailabilityChecker.h */,
+				48029C81214A98A2000AA82C /* BCChatAvailabilityChecker.m */,
+				48029C83214A98A2000AA82C /* BCChatStateDelegate.h */,
+				48029C84214A98A2000AA82C /* BCErrorCodes.h */,
+				48029C86214A98A2000AA82C /* BCSubmitPostChatDelegate.h */,
+				48029C88214A98A2000AA82C /* BCChatMessageDelegate.h */,
 				48029C8A214A98A2000AA82C /* BCUnavailableReason.h */,
 				48029C8B214A98A2000AA82C /* BCChatTyperDelegate.h */,
-				48029C8C214A98A2000AA82C /* BCChatImpl.h */,
 				48029C8D214A98A2000AA82C /* BCSubmitUnavailableEmailDelegate.h */,
 				48029C8E214A98A2000AA82C /* BCChatRecaptureDelegate.h */,
 				48029C8F214A98A2000AA82C /* BCEmailChatHistoryDelegate.h */,
-				48029C91214A98A2000AA82C /* BCChatAvailabilityChecker.h */,
 				48029C92214A98A2000AA82C /* BCCreateChatSessionDelegate.h */,
-				48029C94214A98A2000AA82C /* BCChatImpl+Notifications.h */,
 				48029C95214A98A2000AA82C /* BCSubmitPreChatDelegate.h */,
 				48029C96214A98A2000AA82C /* BCChangeLanguageDelegate.h */,
 				48029C97214A98A2000AA82C /* BCChatAvailability.h */,
 				48029C98214A98A2000AA82C /* BCChatQueueDelegate.h */,
 				48029C9A214A98A2000AA82C /* BCChat.h */,
 				48029C9B214A98A2000AA82C /* BCAccount+ServerSet.h */,
-				48029C9C214A98A2000AA82C /* BCChatImpl.m */,
 				48029C9D214A98A2000AA82C /* BCChatSession.h */,
 				48029C9E214A98A2000AA82C /* BCCancelable.h */,
 			);
@@ -971,15 +985,15 @@
 			isa = PBXGroup;
 			children = (
 				48029CA0214A98A2000AA82C /* BCFormFieldOption.h */,
+				48029CA6214A98A2000AA82C /* BCFormFieldOption.m */,
 				48029CA1214A98A2000AA82C /* BCFormField.h */,
+				48029CA5214A98A2000AA82C /* BCFormField.m */,
+				48029CA7214A98A2000AA82C /* BCPerson.h */,
 				48029CA2214A98A2000AA82C /* BCPerson.m */,
+				48029CA9214A98A2000AA82C /* BCForm.h */,
 				48029CA3214A98A2000AA82C /* BCForm.m */,
 				48029CA4214A98A2000AA82C /* BCMessage.h */,
-				48029CA5214A98A2000AA82C /* BCFormField.m */,
-				48029CA6214A98A2000AA82C /* BCFormFieldOption.m */,
-				48029CA7214A98A2000AA82C /* BCPerson.h */,
 				48029CA8214A98A2000AA82C /* BCMessage.m */,
-				48029CA9214A98A2000AA82C /* BCForm.h */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -990,6 +1004,14 @@
 				48029CE3214A9925000AA82C /* libicucore.tbd */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		488C59A821CA761B00E05369 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				488C59AC21CA761C00E05369 /* Bold360Core.framework */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1157,12 +1179,28 @@
 			mainGroup = 48029798214A96EF000AA82C;
 			productRefGroup = 480297A3214A96EF000AA82C /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 488C59A821CA761B00E05369 /* Products */;
+					ProjectRef = 488C59A721CA761B00E05369 /* Bold360Core.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				480297A1214A96EF000AA82C /* BoldEngine */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		488C59AC21CA761C00E05369 /* Bold360Core.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Bold360Core.framework;
+			remoteRef = 488C59AB21CA761C00E05369 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		480297A0214A96EF000AA82C /* Resources */ = {
