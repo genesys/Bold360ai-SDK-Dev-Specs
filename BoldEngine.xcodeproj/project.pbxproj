@@ -209,7 +209,18 @@
 		48029CE0214A98A3000AA82C /* BCMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 48029CA8214A98A2000AA82C /* BCMessage.m */; };
 		48029CE1214A98A3000AA82C /* BCForm.h in Headers */ = {isa = PBXBuildFile; fileRef = 48029CA9214A98A2000AA82C /* BCForm.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		48029CE4214A9925000AA82C /* libicucore.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 48029CE3214A9925000AA82C /* libicucore.tbd */; };
+		AF2D8C9C21D91818005B7A81 /* BoldCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF2D8C9A21D91720005B7A81 /* BoldCore.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		AF2D8C9921D91720005B7A81 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AF2D8C9521D91720005B7A81 /* BoldCore.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 4846C6FD21CA40280020DB7F;
+			remoteInfo = BoldCore;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		480297A2214A96EF000AA82C /* BoldEngine.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BoldEngine.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -416,6 +427,7 @@
 		48029CA8214A98A2000AA82C /* BCMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BCMessage.m; sourceTree = "<group>"; };
 		48029CA9214A98A2000AA82C /* BCForm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BCForm.h; sourceTree = "<group>"; };
 		48029CE3214A9925000AA82C /* libicucore.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libicucore.tbd; path = usr/lib/libicucore.tbd; sourceTree = SDKROOT; };
+		AF2D8C9521D91720005B7A81 /* BoldCore.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = BoldCore.xcodeproj; path = ../../BoldCore/BoldCore.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -424,6 +436,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				48029CE4214A9925000AA82C /* libicucore.tbd in Frameworks */,
+				AF2D8C9C21D91818005B7A81 /* BoldCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -433,6 +446,7 @@
 		48029798214A96EF000AA82C = {
 			isa = PBXGroup;
 			children = (
+				AF2D8C9521D91720005B7A81 /* BoldCore.xcodeproj */,
 				480297A4214A96EF000AA82C /* BoldEngine */,
 				480297A3214A96EF000AA82C /* Products */,
 				48029CE2214A9924000AA82C /* Frameworks */,
@@ -992,6 +1006,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		AF2D8C9621D91720005B7A81 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AF2D8C9A21D91720005B7A81 /* BoldCore.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -1157,12 +1179,28 @@
 			mainGroup = 48029798214A96EF000AA82C;
 			productRefGroup = 480297A3214A96EF000AA82C /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = AF2D8C9621D91720005B7A81 /* Products */;
+					ProjectRef = AF2D8C9521D91720005B7A81 /* BoldCore.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				480297A1214A96EF000AA82C /* BoldEngine */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		AF2D8C9A21D91720005B7A81 /* BoldCore.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = BoldCore.framework;
+			remoteRef = AF2D8C9921D91720005B7A81 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		480297A0214A96EF000AA82C /* Resources */ = {
@@ -1405,7 +1443,11 @@
 				INFOPLIST_FILE = BoldEngine/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.bold.BoldEngine;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
@@ -1426,7 +1468,11 @@
 				INFOPLIST_FILE = BoldEngine/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.bold.BoldEngine;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;

@@ -22,6 +22,8 @@
  @since Version 1.0
  */
 @property(nonatomic, strong)NSDictionary *formFieldsDictionary;
+
+@property(nonatomic)BCFormType type;
 @end
 
 @implementation BCForm
