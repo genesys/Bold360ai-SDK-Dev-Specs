@@ -120,6 +120,10 @@ NSString *const BCFormFieldCustomUrl = @"CustomUrl";
     return self;
 }
 
+- (NSString *)apiKey {
+    return _accessKey;
+}
+
 /* Chat session creation */
 - (id<BCCancelable>)createChatSessionWithDelegate:(id<BCCreateChatSessionDelegate>)delegate language:(NSString *)language {
     return [self createChatSessionWithDelegate:delegate language:language visitorId:nil skipPreChat:NO externalParams:nil];
