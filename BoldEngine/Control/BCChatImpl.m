@@ -38,6 +38,11 @@ typedef enum {
     BCChatImplStateFinished /**<Chatting is finished. @since Version 1.0*/
 }BCChatImplState;
 
+// avoid readonly on type
+@interface BCForm ()
+@property(nonatomic)BCFormType type;
+@end
+
 /**
  BCChatImpl private interface.
  @since Version 1.0
@@ -564,6 +569,7 @@ The time in seconds that states if an operator did not send a message to the cli
     [self stopAnswerTimeoutTimer];
     if (result.statusSuccess) {
         BCForm *postChatDescription = [[BCForm alloc] initWithFormFields:result.postChat];
+        postChatDescription.type = BCFormTypePostChat;
         self.currentPostChatForm = postChatDescription;
         /*if (self.state == BCChatImplStateFinishing) {
             self.state = BCChatImplStateFinishedUpdateNotArrived;

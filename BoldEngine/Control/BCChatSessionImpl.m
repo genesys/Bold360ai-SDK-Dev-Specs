@@ -42,6 +42,11 @@ typedef enum {
     BCChatSessionStateFinished /**< The session finished. @since Version 1.0*/
 }BCChatSessionState;
 
+// avoid readonly on type
+@interface BCForm ()
+@property(nonatomic)BCFormType type;
+@end
+
 /**
  BCChatSessionImpl private interface.
  @since Version 1.0
@@ -899,6 +904,8 @@ typedef enum {
             if (result.unavailableForm.count) {
                 self.state = BCChatSessionStateUnavailableForm;
                 self.unavailableForm = [[BCForm alloc] initWithFormFields:result.unavailableForm];
+                self.unavailableForm.type = BCFormTypeUnavailable;
+                
             } else {
                 self.state = BCChatSessionStateFinished;
                 [self.chatRecovery sendClosedAndStop];
@@ -909,6 +916,7 @@ typedef enum {
         } else if (result.preChat && result.preChat.count) {
             self.state = BCChatSessionStatePreChatForm;
             self.preChatForm = [[BCForm alloc] initWithFormFields:result.preChat];
+            self.unavailableForm.type = BCFormTypePreChat;
             [self.createChatDelegate bcChatSessionImpl:self didCreateWithPreChat:self.preChatForm];
         } else {
             self.state = BCChatSessionStateChatting;
@@ -965,6 +973,7 @@ typedef enum {
             if (result.unavailableForm.count) {
                 self.state = BCChatSessionStateUnavailableForm;
                 self.unavailableForm = [[BCForm alloc] initWithFormFields:result.unavailableForm];
+                self.unavailableForm.type = BCFormTypeUnavailable;
             } else {
                 self.state = BCChatSessionStateFinished;
                 [self.chatRecovery sendClosedAndStop];
