@@ -209,13 +209,12 @@
 		48029CE0214A98A3000AA82C /* BCMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 48029CA8214A98A2000AA82C /* BCMessage.m */; };
 		48029CE1214A98A3000AA82C /* BCForm.h in Headers */ = {isa = PBXBuildFile; fileRef = 48029CA9214A98A2000AA82C /* BCForm.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		48029CE4214A9925000AA82C /* libicucore.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 48029CE3214A9925000AA82C /* libicucore.tbd */; };
-		AF2D8C9C21D91818005B7A81 /* BoldCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF2D8C9A21D91720005B7A81 /* BoldCore.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		AF2D8C9921D91720005B7A81 /* PBXContainerItemProxy */ = {
+		48CF384C21DE4E94006541FE /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = AF2D8C9521D91720005B7A81 /* BoldCore.xcodeproj */;
+			containerPortal = 48CF384821DE4E94006541FE /* BoldCore.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 4846C6FD21CA40280020DB7F;
 			remoteInfo = BoldCore;
@@ -427,7 +426,7 @@
 		48029CA8214A98A2000AA82C /* BCMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BCMessage.m; sourceTree = "<group>"; };
 		48029CA9214A98A2000AA82C /* BCForm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BCForm.h; sourceTree = "<group>"; };
 		48029CE3214A9925000AA82C /* libicucore.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libicucore.tbd; path = usr/lib/libicucore.tbd; sourceTree = SDKROOT; };
-		AF2D8C9521D91720005B7A81 /* BoldCore.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = BoldCore.xcodeproj; path = ../../BoldCore/BoldCore.xcodeproj; sourceTree = "<group>"; };
+		48CF384821DE4E94006541FE /* BoldCore.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = BoldCore.xcodeproj; path = ../BoldCore/BoldCore.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -436,7 +435,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				48029CE4214A9925000AA82C /* libicucore.tbd in Frameworks */,
-				AF2D8C9C21D91818005B7A81 /* BoldCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -446,7 +444,7 @@
 		48029798214A96EF000AA82C = {
 			isa = PBXGroup;
 			children = (
-				AF2D8C9521D91720005B7A81 /* BoldCore.xcodeproj */,
+				48CF384821DE4E94006541FE /* BoldCore.xcodeproj */,
 				480297A4214A96EF000AA82C /* BoldEngine */,
 				480297A3214A96EF000AA82C /* Products */,
 				48029CE2214A9924000AA82C /* Frameworks */,
@@ -1006,10 +1004,10 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		AF2D8C9621D91720005B7A81 /* Products */ = {
+		48CF384921DE4E94006541FE /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				AF2D8C9A21D91720005B7A81 /* BoldCore.framework */,
+				48CF384D21DE4E94006541FE /* BoldCore.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1181,8 +1179,8 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = AF2D8C9621D91720005B7A81 /* Products */;
-					ProjectRef = AF2D8C9521D91720005B7A81 /* BoldCore.xcodeproj */;
+					ProductGroup = 48CF384921DE4E94006541FE /* Products */;
+					ProjectRef = 48CF384821DE4E94006541FE /* BoldCore.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -1193,11 +1191,11 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		AF2D8C9A21D91720005B7A81 /* BoldCore.framework */ = {
+		48CF384D21DE4E94006541FE /* BoldCore.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
 			path = BoldCore.framework;
-			remoteRef = AF2D8C9921D91720005B7A81 /* PBXContainerItemProxy */;
+			remoteRef = 48CF384C21DE4E94006541FE /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
