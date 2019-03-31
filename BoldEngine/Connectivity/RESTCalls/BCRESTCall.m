@@ -12,7 +12,7 @@
 #import "BCErrorCodes.h"
 #import "GTMNSString+BCURLArguments.h"
 
-typedef void (^BCRESTCallDelayedCallback)();
+typedef void (^BCRESTCallDelayedCallback)(void);
 
 /**
  JSON HTTP request URL pattern.

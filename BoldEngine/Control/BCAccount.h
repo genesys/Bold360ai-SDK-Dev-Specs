@@ -3,7 +3,6 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <BoldCore/Account.h>
 
 @protocol BCChatSession;
 @protocol BCCancelable;
@@ -19,7 +18,7 @@
  * <p>The chat sessions are for performing the actual chat session. They are created by \link BCAccount::createChatSessionWithDelegate:language: createChatSessionWithDelegate:language:\endlink and \link BCAccount::createChatSessionWithDelegate:language:visitorId:skipPreChat:externalParams:\endlink.</p>
  * @since Version 1.0
  */
-@interface BCAccount : Account
+@interface BCAccount : NSObject
 
 /**
  * @brief The access key for the SDK.

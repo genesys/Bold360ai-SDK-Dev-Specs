@@ -494,10 +494,11 @@ static __strong NSData *CRLFCRLF;
         [self _readFrameNew];
     }
 
+    __weak BC_SRWebSocket *weakSelf = self;
     [self _performDelegateBlock:^{
         @synchronized(_delegateSyncObject) {
-            if ([self.delegate respondsToSelector:@selector(webSocketDidOpen:)]) {
-                [self.delegate webSocketDidOpen:self];
+            if ([weakSelf.delegate respondsToSelector:@selector(webSocketDidOpen:)]) {
+                [weakSelf.delegate webSocketDidOpen:weakSelf];
         }
         };
     }];

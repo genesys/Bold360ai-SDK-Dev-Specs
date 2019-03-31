@@ -364,7 +364,8 @@ The time in seconds that states if an operator did not send a message to the cli
 }
 
 - (void)startStartChatCall {
-    [self.startChatCall cancel], self.startChatCall = nil;
+    [self.startChatCall cancel];
+    self.startChatCall = nil;
     self.startChatCall = [self.connectivityManager startChatCall];
     self.startChatCall.chatKey = self.chatKey;
     self.startChatCall.delegate = self;
@@ -373,7 +374,8 @@ The time in seconds that states if an operator did not send a message to the cli
 }
 
 - (void)startFinishChatCall {
-    [self.finishChatCall cancel], self.finishChatCall = nil;
+    [self.finishChatCall cancel];
+    self.finishChatCall = nil;
     self.finishChatCall = [self.connectivityManager finishChatCall];
     self.finishChatCall.chatKey = self.chatKey;
     self.finishChatCall.clientId = self.clientId;

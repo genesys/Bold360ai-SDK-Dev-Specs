@@ -181,7 +181,6 @@ NSString *const BCFormFieldCustomUrl = @"CustomUrl";
     BCCancelableImpl *cancelable = [[BCCancelableImpl alloc] initWithDelegate:self];
     BCChatSessionImpl *chatSessionImp = [BCChatSessionImpl chatSessionImplWithAccountId:self.connectivityManager.accountId accessKey:self.connectivityManager.accessKey connectivityManager:self.connectivityManager language:language visitorId:visitorId skipPreChat:skipPreChat data:externalParams securedParams:securedParams];
 
-    
     [self.cancelablesOfChatSessions addObject:cancelable];
     [self.chatSessionsBeingCreated addObject:chatSessionImp];
     [self.createChatDelegates addObject:delegate];
