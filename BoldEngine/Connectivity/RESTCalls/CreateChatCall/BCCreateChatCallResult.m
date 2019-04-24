@@ -24,5 +24,6 @@
 @synthesize preChat;
 @synthesize brandings;
 @synthesize answerTimeout;
+@synthesize chatWindowSettings;
 
 @end

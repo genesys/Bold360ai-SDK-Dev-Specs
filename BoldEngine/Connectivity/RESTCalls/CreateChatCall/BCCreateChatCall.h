@@ -22,6 +22,7 @@
 @property(nonatomic, copy)NSString *visitorId;
 @property(nonatomic, copy)NSString *language;
 @property(nonatomic, assign)BOOL includeBrandingValues;
+@property(nonatomic, assign)BOOL includeChatWindowSettingsValues;
 @property(nonatomic, assign)BOOL skipPreChat;
 
 /**
