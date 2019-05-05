@@ -27,7 +27,7 @@
 - (void)propagateDidSendVisitorTyping:(BOOL)typing;
 
 /**
- * @brief The visitor received a message. It can be an operator, system or a visitor messagethat was sent before.
+ * @brief The visitor received a message. It can be an operator, system or a visitor message that was sent before.
  * @param message The message received.
  * @since Version 1.0
  */

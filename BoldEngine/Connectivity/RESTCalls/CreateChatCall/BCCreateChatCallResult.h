@@ -23,6 +23,7 @@
 @property(nonatomic, copy)NSArray *unavailableForm;
 @property(nonatomic, copy)NSArray *preChat;
 @property(nonatomic, copy)NSDictionary *brandings;
+@property(nonatomic, copy)NSDictionary *chatWindowSettings;
 @property(nonatomic, strong)NSString *unavailableReason;
 @property(nonatomic, assign)NSInteger answerTimeout;
 

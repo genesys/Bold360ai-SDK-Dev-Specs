@@ -169,6 +169,11 @@ typedef enum {
 @property (nonatomic, copy)NSDictionary *branding;
 
 /**
+ A dictionary that contains the chat window settings.
+ */
+@property (nonatomic, copy)NSDictionary *chatWindowSettings;
+
+/**
  Connectivity manager for the network calls. The same connectivity manager is used for the chat sessions and the availability ckeckers.
  @since Version 1.0
  */
@@ -395,6 +400,7 @@ typedef enum {
 
 @synthesize chat = _chat;
 @synthesize branding = _branding;
+@synthesize chatWindowSettings = _chatWindowSettings;
 
 @synthesize connectivityManager = _connectivityManager;
 @synthesize createChatCall = _createChatCall;
@@ -481,6 +487,7 @@ typedef enum {
     self.createChatCall.visitorId = self.visitor.personId;
     self.createChatCall.language = self.language;
     self.createChatCall.includeBrandingValues = YES;
+    self.createChatCall.includeChatWindowSettingsValues = YES;
     self.createChatCall.skipPreChat = _skipPreChat;
     self.createChatCall.data = _data;
     self.createChatCall.secured = self.securedParams;
@@ -892,6 +899,7 @@ typedef enum {
         self.visitor.personId = result.visitorId;
         self.clientId = result.clientId;
         self.branding = result.brandings;
+        self.chatWindowSettings = result.chatWindowSettings;
         if (result.name) self.visitor.name = result.name;
         
         self.chatRecovery = [[BCChatRecovery alloc] init];

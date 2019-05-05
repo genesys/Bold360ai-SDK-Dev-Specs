@@ -44,6 +44,7 @@
     if (!result.preChat && parsedDictionary[@"PreChat"]) result.preChat = @[];
     
     result.brandings = parsedDictionary[@"Brandings"];
+    result.chatWindowSettings = parsedDictionary[@"ChatWindowSettings"];
     
     return result;
 }
