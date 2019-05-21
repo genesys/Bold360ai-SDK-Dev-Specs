@@ -166,12 +166,17 @@ typedef enum {
  A dictionary that contains the localized strings for the current language.
  @since Version 1.0
  */
-@property (nonatomic, copy)NSDictionary *branding;
+@property (nonatomic, copy) NSDictionary *branding;
 
 /**
  A dictionary that contains the chat window settings.
  */
-@property (nonatomic, copy)NSDictionary *chatWindowSettings;
+@property (nonatomic, copy) NSDictionary *chatWindowSettings;
+
+/**
+ A dictionary that contains the chat upload params.
+ */
+@property (nonatomic, copy) NSMutableDictionary *uploadParams;
 
 /**
  Connectivity manager for the network calls. The same connectivity manager is used for the chat sessions and the availability ckeckers.
@@ -401,6 +406,7 @@ typedef enum {
 @synthesize chat = _chat;
 @synthesize branding = _branding;
 @synthesize chatWindowSettings = _chatWindowSettings;
+@synthesize uploadParams = _uploadParams;
 
 @synthesize connectivityManager = _connectivityManager;
 @synthesize createChatCall = _createChatCall;
@@ -426,6 +432,20 @@ typedef enum {
 
 @synthesize changeLanguageDelegate = _changeLanguageDelegate;
 @synthesize changeLanguageCancelable = _changeLanguageCancelable;
+
+- (NSMutableDictionary *)uploadParams {
+    if (!_uploadParams) {
+        _uploadParams = [NSMutableDictionary new];
+    }
+    
+    _uploadParams[@"chatId"] = self.chatId;
+    _uploadParams[@"personId"] = self.visitor.personId;
+    _uploadParams[@"clientId"] = self.clientId;
+    _uploadParams[@"accountId"] = self.accountId;
+    _uploadParams[@"personType"] = @"VISITOR";
+    
+    return _uploadParams;
+}
 
 + (id)chatSessionImplWithAccountId:(NSString *)accountId
                          accessKey:(NSString *)accessKey
