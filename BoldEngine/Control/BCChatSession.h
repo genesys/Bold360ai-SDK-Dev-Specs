@@ -111,12 +111,17 @@
  * @brief A dictionary that contains the localized strings for the current set language.
  * @since Version 1.0
  */
-@property (nonatomic, copy, readonly)NSDictionary *branding;
+@property (nonatomic, copy, readonly) NSDictionary *branding;
 
 /**
  * @brief A dictionary that contains chat window settings.
  */
-@property (nonatomic, copy, readonly)NSDictionary *chatWindowSettings;
+@property (nonatomic, copy, readonly) NSDictionary *chatWindowSettings;
+
+/**
+ * @brief A mutable dictionary that contains chat upload params.
+ */
+@property (nonatomic, copy, readonly) NSMutableDictionary *uploadParams;
 
 /**
  * @brief Stop and finish of the current session. It can be called any time to cancel and close the session. There are no calls on the delegate after this call.
