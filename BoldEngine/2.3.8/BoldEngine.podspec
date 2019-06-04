@@ -26,7 +26,7 @@ Pod::Spec.new do |s|
     # ]
 
 s.source = {
-"http" => "https://dl.bintray.com/nanorep/Specs-Dev/BoldEngine_version_v2.3.8.rc3_commit_c0f82b2fabeda22977a1eae4ea7e05d180c87152.zip"
+"http" => "https://dl.bintray.com/nanorep/Specs-Dev/BoldEngine_version_v2.3.8.rc4_commit_e4b70f27cd500aacf81606f7bc0215bc33bccf50.zip"
 }
   
 s.vendored_frameworks = 'BoldEngine.framework'
