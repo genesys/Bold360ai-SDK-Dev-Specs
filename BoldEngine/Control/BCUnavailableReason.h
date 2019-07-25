@@ -14,4 +14,5 @@ typedef enum {
     BCUnavailableReasonVisitorBlocked, /**< The visitor has been blocked by an operator. @since Version 1.0 */
     BCUnavailableReasonOutsideHours, /**< It is currently outside the operating hours for the given WebsiteID. @since Version 1.0 */
     BCUnavailableReasonUnsecure, /**< Chat requires validation and has not been validated. @since Version 1.0 */
+    BCUnavailableReasonError /**< Failed to check. @since Version 2.0 */
 }BCUnavailableReason;
