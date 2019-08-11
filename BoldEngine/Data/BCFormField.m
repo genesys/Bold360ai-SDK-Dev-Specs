@@ -2,8 +2,8 @@
 //  Copyright (c) 2014 LogMeIn Inc. All rights reserved.
 //
 
-#import "BCFormField.h"
-#import "BCFormFieldOption.h"
+#import <BoldEngine/BCFormField.h>
+#import <BoldEngine/BCFormFieldOption.h>
 
 /**
  BCFormField private inerface.
@@ -28,12 +28,6 @@
  @since Version 1.0
  */
 @property(nonatomic, assign) BOOL isMultiline;
-
-/**
- The title label text of the field.
- @since Version 1.0
- */
-@property(nonatomic, copy) NSString *label;
 
 /**
  The localized label text to display.

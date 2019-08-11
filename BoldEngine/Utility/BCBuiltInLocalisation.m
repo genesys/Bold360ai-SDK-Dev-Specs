@@ -3,7 +3,7 @@
 //  Copyright (c) 2014 LogMeIn Inc. All rights reserved.
 //
 
-#import "BCBuiltInLocalisation.h"
+#import <BoldEngine/BCBuiltInLocalisation.h>
 
 @implementation BCBuiltInLocalisation
 

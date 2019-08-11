@@ -4,7 +4,12 @@
 
 #import "BCChatImpl.h"
 #import "BCChatImpl+Notifications.h"
+#import "BCForm.h"
 
+// avoid readonly on type
+@interface BCForm ()
+@property(nonatomic)BCFormType type;
+@end
 
 @implementation BCChatImpl (Notifications)
 
@@ -54,6 +59,14 @@
     }
 }
 
+- (void)propagateDidAccept {
+    for (id<BCChatStateDelegate>delegate in self.chatStateDelegates) {
+        if ([delegate respondsToSelector:@selector(bcChatDidAccept:)]) {
+            [delegate bcChatDidAccept:self];
+        }
+    }
+}
+
 - (void)propagateDidFinishWithReason:(BCChatEndReason)reason time:(NSDate *)date postChatForm:(BCForm *)postChatForm{
     for (id<BCChatStateDelegate>delegate in self.chatStateDelegates) {
         [delegate bcChat:self didFinishWithReason:reason time:date postChatForm:postChatForm];
@@ -62,6 +75,7 @@
 
 - (void)propagateDidFinishWithUnavailableReason:(BCUnavailableReason)reason unavailableForm:(BCForm *)unavailableForm unavailableMessage:(NSString *)message {
     for (id<BCChatStateDelegate>delegate in self.chatStateDelegates) {
+        unavailableForm.type = BCFormTypeUnavailable;
         [delegate bcChat:self didFinishWithUnavailableReason:reason unavailableForm:unavailableForm unavailableMessage:message];
     }
 }

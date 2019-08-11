@@ -18,6 +18,7 @@
         NSString *chatId = nil;
         NSDate *endDate = nil;
         NSString *endReason = nil;
+        NSString *answered = nil;
         
         NSArray *paramsArray = message[@"params"];
         if (paramsArray.count > 0) {
@@ -26,6 +27,7 @@
             NSDictionary *values = paramsDict[@"Values"];
             if (values) {
                 endReason = [values[@"EndedReason"] bcNilOrStringValue];
+                answered = [values[@"Answered"] bcNilOrStringValue];
                 
                 NSString *endedValue = [values[@"Ended"] bcNilOrStringValue];
                 if (endedValue) {
@@ -38,8 +40,13 @@
                     endDate = [formatter dateFromString:endedValue];
                 }
             }
+            
+            [self.delegate ossUpdateChatNotification:self
+                                              chatId:chatId
+                                            answered:answered
+                                             endedAt:endDate
+                                              reason:endReason];
         }
-        [self.delegate ossUpdateChatNotification:self chatId:chatId endedAt:endDate reason:endReason];
         return YES;
     } else {
         return NO;

@@ -10,7 +10,7 @@
 #import "BCOSSWebSocketLink.h"
 #import "SRWebSocket.h"
 #import "NSString+RandomIdentifier.h"
-#import "BCMessage.h"
+#import <BoldEngine/BCMessage.h>
 #import "BCOSSResponsePreProcessor.h"
 #import "BCOSSConnectNotification.h"
 #import "BCOSSConnectCall.h"
@@ -431,7 +431,7 @@ typedef enum {
     NSDictionary *resultDictionary = [array[1] isKindOfClass:[NSNull class]] ? nil : array[1];
 //#if DEBUG
     NSLog(@"Message:\n%@",resultDictionary);
-//jkhg#endif
+//#endif
     self.lastMessageTime = [[NSDate date] timeIntervalSince1970];
     if (!resultDictionary) return;
     
@@ -565,7 +565,8 @@ typedef enum {
 
 #pragma mark -
 #pragma mark BCOSSUpdateChatNotification
-- (void)ossUpdateChatNotification:(BCOSSUpdateChatNotification *)notification chatId:(NSString *)chatId endedAt:(NSDate *)endTime reason:(NSString *)reason {
+- (void)ossUpdateChatNotification:(BCOSSUpdateChatNotification *)notification chatId:(NSString *)chatId
+                         answered:(NSString *)answered endedAt:(NSDate *)endTime reason:(NSString *)reason {
     if (endTime && reason) {
         BCOSSLinkEndReason endReason = BCOSSLinkEndReasonUnknown;
         if ([reason isEqualToString:@"operator"]) {
@@ -578,6 +579,10 @@ typedef enum {
         if (self.state != BCOSSWebSocketLinkStateClosed) {
             [self close];
             [self.delegate ossLink:self didEndWithReason:endReason time:endTime error:nil];
+        }
+    } else if (answered) {
+        if (self.state != BCOSSWebSocketLinkStateClosed) {
+            [self.delegate ossLink:self didAcceptChat:answered];
         }
     }
 }

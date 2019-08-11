@@ -3,11 +3,11 @@
 //
 
 #import "BCChatImpl.h"
-#import "BCMessage.h"
+#import <BoldEngine/BCMessage.h>
 #import "BCStartChatCall.h"
 #import "BCOSSCommunicator.h"
 #import "NSString+RandomIdentifier.h"
-#import "BCPerson.h"
+#import <BoldEngine/BCPerson.h>
 #import "BCFinishChatCall.h"
 #import "BCForm.h"
 #import "BCTimer.h"
@@ -37,6 +37,11 @@ typedef enum {
     BCChatImplStateGettingUnavailableForm, /**<finishChat finished, waiting for updateChat to arrive. @since Version 1.0*/
     BCChatImplStateFinished /**<Chatting is finished. @since Version 1.0*/
 }BCChatImplState;
+
+// avoid readonly on type
+@interface BCForm ()
+@property(nonatomic)BCFormType type;
+@end
 
 /**
  BCChatImpl private interface.
@@ -359,7 +364,8 @@ The time in seconds that states if an operator did not send a message to the cli
 }
 
 - (void)startStartChatCall {
-    [self.startChatCall cancel], self.startChatCall = nil;
+    [self.startChatCall cancel];
+    self.startChatCall = nil;
     self.startChatCall = [self.connectivityManager startChatCall];
     self.startChatCall.chatKey = self.chatKey;
     self.startChatCall.delegate = self;
@@ -368,7 +374,8 @@ The time in seconds that states if an operator did not send a message to the cli
 }
 
 - (void)startFinishChatCall {
-    [self.finishChatCall cancel], self.finishChatCall = nil;
+    [self.finishChatCall cancel];
+    self.finishChatCall = nil;
     self.finishChatCall = [self.connectivityManager finishChatCall];
     self.finishChatCall.chatKey = self.chatKey;
     self.finishChatCall.clientId = self.clientId;
@@ -564,6 +571,7 @@ The time in seconds that states if an operator did not send a message to the cli
     [self stopAnswerTimeoutTimer];
     if (result.statusSuccess) {
         BCForm *postChatDescription = [[BCForm alloc] initWithFormFields:result.postChat];
+        postChatDescription.type = BCFormTypePostChat;
         self.currentPostChatForm = postChatDescription;
         /*if (self.state == BCChatImplStateFinishing) {
             self.state = BCChatImplStateFinishedUpdateNotArrived;
@@ -821,7 +829,13 @@ The time in seconds that states if an operator did not send a message to the cli
             
             break;
     }
-    
+}
+
+- (void)ossCommunicator:(BCOSSCommunicator *)ossCommunicator didAcceptChat:(NSString *)acceptTime {
+    if (acceptTime && !self.answered) {
+        [self propagateDidAccept];
+        self.answered = YES;
+    }
 }
 
 - (void)ossCommunicator:(BCOSSCommunicator *)ossCommunicator didSendMessage:(BCMessage *)message {

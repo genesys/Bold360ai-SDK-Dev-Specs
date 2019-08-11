@@ -3,7 +3,7 @@
 //  Copyright (c) 2014 LogMeIn Inc. All rights reserved.
 //
 
-#import "NSString+BCValidation.h"
+#import <BoldEngine/NSString+BCValidation.h>
 
 @implementation NSString (BCEmailAddressValidation)
 
@@ -21,6 +21,13 @@
     NSPredicate *test = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", phoneRegex];
     BOOL matches = [test evaluateWithObject:self];
     return matches;
+}
+
+- (BOOL)bcIsValidAlphabets {
+    NSString *abnRegex = @"[A-Za-z]+";
+    NSPredicate *abnTest = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", abnRegex];
+    BOOL isValid = [abnTest evaluateWithObject:self];
+    return isValid;
 }
 
 @end

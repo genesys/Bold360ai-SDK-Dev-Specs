@@ -25,4 +25,6 @@
  */
 - (BOOL)bcIsValidPhoneNumber;
 
+- (BOOL)bcIsValidAlphabets;
+
 @end

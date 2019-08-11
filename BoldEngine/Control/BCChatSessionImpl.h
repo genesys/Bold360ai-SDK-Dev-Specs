@@ -6,9 +6,9 @@
 #import <Foundation/Foundation.h>
 #import "BCChatSession.h"
 #import "BCChat.h"
-#import "BCPerson.h"
+#import <BoldEngine/BCPerson.h>
 #import "BCConnectivityManager.h"
-#import "BCCreateChatSessionDelegate.h"
+#import <BoldEngine/BCCreateChatSessionDelegate.h>
 
 @class BCChatSessionImpl;
 
@@ -66,8 +66,9 @@
  * @param visitorId The id of a previous visitor. If omitted, a new one is generated.
  * @param skipPreChat If there is pre-chat set for the chat it can be skipped with sending the answers in the data.
  * @param data The answers for the skipped pre chat and external parameters.
+ * @param securedParams An encrypted list of parameters that validate the caller of the API.
  * @returns An instance of BCChatSessionImpl.
- * @since Version 1.0
+ * @since Version 1.1
  */
 + (id)chatSessionImplWithAccountId:(NSString *)accountId
                          accessKey:(NSString *)accessKey
@@ -75,7 +76,8 @@
                           language:(NSString *)language
                          visitorId:(NSString *)visitorId
                        skipPreChat:(BOOL)skipPreChat
-                              data:(NSDictionary *)data;
+                              data:(NSDictionary *)data
+                     securedParams:(NSString *)securedParams;
 
 /**
  * @brief Constructor.
@@ -86,8 +88,9 @@
  * @param visitorId The id of a previous visitor. If omitted, a new one is generated.
  * @param skipPreChat If there is pre chat set for the chat it can be skipped with sending the answers in the data.
  * @param data The answers for the skipped pre chat and external parameters.
+ * @param securedParams An encrypted list of parameters that validate the caller of the API.
  * @returns An instance of BCChatSessionImpl.
- * @since Version 1.0
+ * @since Version 1.1
  */
 - (id)initWithAccountId:(NSString *)accountId
               accessKey:(NSString *)accessKey
@@ -95,7 +98,8 @@
                language:(NSString *)language
               visitorId:(NSString *)visitorId
             skipPreChat:(BOOL)skipPreChat
-                   data:(NSDictionary *)data;
+                   data:(NSDictionary *)data
+          securedParams:(NSString *)securedParams;
 
 /**
  * @brief Creates the current session. The result is called back on the delegate.

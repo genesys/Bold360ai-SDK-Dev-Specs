@@ -2,7 +2,7 @@
 //  Copyright (c) 2014 LogMeIn Inc. All rights reserved.
 //
 
-#import "BCFormFieldOption.h"
+#import <BoldEngine/BCFormFieldOption.h>
 
 /**
  BCFormFieldOption private inerface..
@@ -45,12 +45,6 @@
  @since Version 1.0
  */
 @property(nonatomic, assign)BOOL isAvailable;
-
-/**
- The text to be displayed about the availability state.
- @since Version 1.0
- */
-@property(nonatomic, copy)NSString *availableLabel;
 
 @end
 

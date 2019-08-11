@@ -63,6 +63,33 @@
  */
 - (id<BCCancelable>)createChatSessionWithDelegate:(id<BCCreateChatSessionDelegate>)delegate language:(NSString *)language visitorId:(NSString *)visitorId skipPreChat:(BOOL)skipPreChat externalParams:(NSDictionary *)externalParams;
 
+/**
+ * @brief Initiates the chat session creation process. If pre-chat form is enabled it will return pre-chat information, if pre-chat is not enabled it will return information about connecting the chat. If chat is unavailable then unavailable information will be returned instead. Calling this method is required for all chat sessions.
+ * @param delegate Delegate The delegate that will be called to receive the data after the SDK call is completed.
+ * @param language Language string to initialise. It must be an ISO 639-1 language code optionally followed by a dash then an ISO 3166-1 country code (en-US).If not set, the application's current language is going to be set.
+ * @param securedParams An encrypted list of parameters that validate the caller of the API.
+ * @returns An object that implements BCCancelable protocol to be able to cancel the request.
+ * @since Version 1.1
+ */
+- (id<BCCancelable>)createSecuredChatSessionWithDelegate:(id<BCCreateChatSessionDelegate>)delegate language:(NSString *)language securedParams:(NSString *)securedParams;
+
+/**
+ * @brief Initiates the chat session creation process. If pre-chat form is enabled it will return pre-chat information, if pre-chat is not enabled it will return information about connecting the chat. If chat is unavailable then unavailable information will be returned instead. Calling this method is required for all chat sessions.
+ * @param delegate Delegate The delegate that will be called to receive the data after the SDK call is completed.
+ * @param language Language string to initialise. It must be an ISO 639-1 language code optionally followed by a dash then an ISO 3166-1 country code (en-US).If not set, the application's current language is going to be set.
+ * @param visitorId The id If the application has previously called createChatSession and a visitorId was returned re-use that id for all subsequent calls for each unique user. If this is the first time the application has used createChat this parameter should be left empty and a new VisitorID will be generated and returned by the server.
+ * @param skipPreChat If there is pre-chat set for the chat it can be skipped with sending the answers in the data
+ * @param externalParams The answers for the skipped pre chat and external parameters.
+ * @param securedParams An encrypted list of parameters that validate the caller of the API.
+ * @returns An object that implements BCCancelable protocol to be able to cancel the request.
+ * @since Version 1.1
+ */
+- (id<BCCancelable>)createSecuredChatSessionWithDelegate:(id<BCCreateChatSessionDelegate>)delegate language:(NSString *)language visitorId:(NSString *)visitorId skipPreChat:(BOOL)skipPreChat externalParams:(NSDictionary *)externalParams  securedParams:(NSString *)securedParams;
+
+
+
+
+
 /** 
  * @brief Retrieves the availability of the chat service.  This can be used to check if chat will be available before showing the option for live chat. This can
   be called at any time without an existing chat session. Results will be cached for 1 minute.

@@ -32,7 +32,7 @@
  * @brief For deparments selection fields that have online/offlinet status, this will return the status label to be displayed to the user.
  * @since Version 1.0
  */
-@property(nonatomic, copy, readonly)NSString *availableLabel;
+@property(nonatomic, copy)NSString *availableLabel;
 
 /**
  * @brief YES if the value is the default.

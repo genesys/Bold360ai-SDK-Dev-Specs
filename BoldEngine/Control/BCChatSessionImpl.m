@@ -11,7 +11,7 @@
 #import "BCConnectivityManager.h"
 #import "BCCreateChatCall.h"
 #import "BCForm.h"
-#import "BCFormField.h"
+#import <BoldEngine/BCFormField.h>
 #import "BCChatImpl.h"
 #import "BCSubmitUnavailableEmailCall.h"
 #import "BCSubmitPreChatCall.h"
@@ -21,7 +21,7 @@
 #import "BCChangeLanguageCall.h"
 #import "BCChatRecovery.h"
 #import "BCAccount.h"
-#import "NSString+BCValidation.h"
+#import <BoldEngine/NSString+BCValidation.h>
 #import "BCCancelableImpl.h"
 
 /** @file */
@@ -41,6 +41,11 @@ typedef enum {
     BCChatSessionStateSendingUnavailableInfo, /**< The submitUnavailable is being called @since Version 1.0*/
     BCChatSessionStateFinished /**< The session finished. @since Version 1.0*/
 }BCChatSessionState;
+
+// avoid readonly on type
+@interface BCForm ()
+@property(nonatomic)BCFormType type;
+@end
 
 /**
  BCChatSessionImpl private interface.
@@ -161,7 +166,17 @@ typedef enum {
  A dictionary that contains the localized strings for the current language.
  @since Version 1.0
  */
-@property (nonatomic, copy)NSDictionary *branding;
+@property (nonatomic, copy) NSDictionary *branding;
+
+/**
+ A dictionary that contains the chat window settings.
+ */
+@property (nonatomic, copy) NSDictionary *chatWindowSettings;
+
+/**
+ A dictionary that contains the chat upload params.
+ */
+@property (nonatomic, copy) NSMutableDictionary *uploadParams;
 
 /**
  Connectivity manager for the network calls. The same connectivity manager is used for the chat sessions and the availability ckeckers.
@@ -222,6 +237,13 @@ typedef enum {
  @since Version 1.0
  */
 @property (nonatomic, strong)NSDictionary *data;
+
+/**
+ An encrypted list of parameters that validate the caller of the API.
+ @since Version 1.1
+ */
+@property (nonatomic, strong)NSString *securedParams;
+
 
 /**
  The delegate for create chat call result.
@@ -375,6 +397,7 @@ typedef enum {
 @synthesize visitor = _visitor;
 @synthesize skipPreChat = _skipPreChat;
 @synthesize data = _data;
+@synthesize securedParams = _securedParams;
 
 @synthesize preChatForm = _preChatForm;
 @synthesize postChatForm = _postChatForm;
@@ -382,6 +405,8 @@ typedef enum {
 
 @synthesize chat = _chat;
 @synthesize branding = _branding;
+@synthesize chatWindowSettings = _chatWindowSettings;
+@synthesize uploadParams = _uploadParams;
 
 @synthesize connectivityManager = _connectivityManager;
 @synthesize createChatCall = _createChatCall;
@@ -408,20 +433,36 @@ typedef enum {
 @synthesize changeLanguageDelegate = _changeLanguageDelegate;
 @synthesize changeLanguageCancelable = _changeLanguageCancelable;
 
+- (NSMutableDictionary *)uploadParams {
+    if (!_uploadParams) {
+        _uploadParams = [NSMutableDictionary new];
+    }
+    
+    _uploadParams[@"chatId"] = self.chatId;
+    _uploadParams[@"personId"] = self.visitor.personId;
+    _uploadParams[@"clientId"] = self.clientId;
+    _uploadParams[@"accountId"] = self.accountId;
+    _uploadParams[@"personType"] = @"VISITOR";
+    
+    return _uploadParams;
+}
+
 + (id)chatSessionImplWithAccountId:(NSString *)accountId
                          accessKey:(NSString *)accessKey
                connectivityManager:(BCConnectivityManager *)connectivityManager
                           language:(NSString *)language
                          visitorId:(NSString *)visitorId
                        skipPreChat:(BOOL)skipPreChat
-                              data:(NSDictionary *)data{
+                              data:(NSDictionary *)data
+                     securedParams:(NSString *)securedParams {
     return [[[self class] alloc] initWithAccountId:accountId
                                          accessKey:accessKey
                                connectivityManager:connectivityManager
                                           language:language
                                          visitorId:visitorId
                                        skipPreChat:skipPreChat
-                                              data:data];
+                                              data:data
+                                     securedParams:securedParams];
 }
 
 - (id)initWithAccountId:(NSString *)accountId
@@ -430,7 +471,9 @@ typedef enum {
                language:(NSString *)language
               visitorId:(NSString *)visitorId
             skipPreChat:(BOOL)skipPreChat
-                   data:(NSDictionary *)data{
+                   data:(NSDictionary *)data
+          securedParams:(NSString *)securedParams {
+
     if ((self = [self init])) {
         self.accountId = accountId;
         self.accessKey = accessKey;
@@ -444,6 +487,7 @@ typedef enum {
         
         self.skipPreChat = skipPreChat;
         self.data = data;
+        self.securedParams = securedParams;
     }
     return self;
 }
@@ -463,8 +507,10 @@ typedef enum {
     self.createChatCall.visitorId = self.visitor.personId;
     self.createChatCall.language = self.language;
     self.createChatCall.includeBrandingValues = YES;
+    self.createChatCall.includeChatWindowSettingsValues = YES;
     self.createChatCall.skipPreChat = _skipPreChat;
     self.createChatCall.data = _data;
+    self.createChatCall.secured = self.securedParams;
     self.createChatCall.delegate = self;
     [self.createChatCall start];
 }
@@ -833,6 +879,10 @@ typedef enum {
     
 }
 
+- (void)bcChatDidAccept:(id<BCChat>)chat {
+    
+}
+
 - (void)bcChat:(id<BCChat>)chat didFinishWithReason:(BCChatEndReason)reason time:(NSDate *)date postChatForm:(BCForm *)postChatForm {
     self.postChatForm = postChatForm;
     BOOL needsPostChat = (postChatForm && postChatForm.formFields.count > 0);
@@ -869,6 +919,7 @@ typedef enum {
         self.visitor.personId = result.visitorId;
         self.clientId = result.clientId;
         self.branding = result.brandings;
+        self.chatWindowSettings = result.chatWindowSettings;
         if (result.name) self.visitor.name = result.name;
         
         self.chatRecovery = [[BCChatRecovery alloc] init];
@@ -881,6 +932,8 @@ typedef enum {
             if (result.unavailableForm.count) {
                 self.state = BCChatSessionStateUnavailableForm;
                 self.unavailableForm = [[BCForm alloc] initWithFormFields:result.unavailableForm];
+                self.unavailableForm.type = BCFormTypeUnavailable;
+                
             } else {
                 self.state = BCChatSessionStateFinished;
                 [self.chatRecovery sendClosedAndStop];
@@ -891,6 +944,7 @@ typedef enum {
         } else if (result.preChat && result.preChat.count) {
             self.state = BCChatSessionStatePreChatForm;
             self.preChatForm = [[BCForm alloc] initWithFormFields:result.preChat];
+            self.unavailableForm.type = BCFormTypePreChat;
             [self.createChatDelegate bcChatSessionImpl:self didCreateWithPreChat:self.preChatForm];
         } else {
             self.state = BCChatSessionStateChatting;
@@ -947,6 +1001,7 @@ typedef enum {
             if (result.unavailableForm.count) {
                 self.state = BCChatSessionStateUnavailableForm;
                 self.unavailableForm = [[BCForm alloc] initWithFormFields:result.unavailableForm];
+                self.unavailableForm.type = BCFormTypeUnavailable;
             } else {
                 self.state = BCChatSessionStateFinished;
                 [self.chatRecovery sendClosedAndStop];

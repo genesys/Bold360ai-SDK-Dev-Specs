@@ -2,8 +2,8 @@
 //  Copyright (c) 2014 LogMeIn Inc. All rights reserved.
 //
 
-#import "BCMessage.h"
-#import "BCPerson.h"
+#import <BoldEngine/BCMessage.h>
+#import <BoldEngine/BCPerson.h>
 #import "NSString+RandomIdentifier.h"
 
 /**

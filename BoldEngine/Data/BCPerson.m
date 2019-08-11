@@ -3,7 +3,7 @@
 //  Copyright (c) 2014 LogMeIn Inc. All rights reserved.
 //
 
-#import "BCPerson.h"
+#import <BoldEngine/BCPerson.h>
 
 @implementation BCPerson
 

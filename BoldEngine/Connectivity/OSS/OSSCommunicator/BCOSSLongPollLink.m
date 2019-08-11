@@ -18,7 +18,7 @@
 #import "BCOSSUpdateTyperNotification.h"
 #import "BCOSSUpdateChatNotification.h"
 #import "BCOSSAutoMessageNotification.h"
-#import "BCMessage.h"
+#import <BoldEngine/BCMessage.h>
 #import "BCErrorCodes.h"
 
 /** @file */
@@ -43,7 +43,7 @@ typedef enum {
                                     BCOSSAutoMessageNotificationDelegate>
 
 @property(nonatomic, assign)BCOSSLongPollLinkState state;
-@property(nonatomic, strong)NSMutableArray *callQueue;
+@property(nonatomic, strong)NSMutableArray<BCCall *> *callQueue;
 @property(nonatomic, strong)BCLongPollCall *longPollCall;
 @property(nonatomic, strong)BCTimer *inactivityTimer;
 @property(nonatomic, strong)BCTimer *waitingToReconnectTimer;
@@ -391,7 +391,8 @@ typedef enum {
 
 #pragma mark -
 #pragma mark BCOSSUpdateChatNotification
-- (void)ossUpdateChatNotification:(BCOSSUpdateChatNotification *)notification chatId:(NSString *)chatId endedAt:(NSDate *)endTime reason:(NSString *)reason {
+- (void)ossUpdateChatNotification:(BCOSSUpdateChatNotification *)notification chatId:(NSString *)chatId
+                         answered:(BOOL)answered endedAt:(NSDate *)endTime reason:(NSString *)reason {
     if (endTime && reason) {
         BCOSSLinkEndReason endReason = BCOSSLinkEndReasonUnknown;
         if ([reason isEqualToString:@"operator"]) {

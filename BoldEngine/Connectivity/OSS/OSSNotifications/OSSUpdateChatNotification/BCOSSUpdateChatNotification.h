@@ -11,7 +11,8 @@
 @class BCOSSUpdateChatNotification;
 
 @protocol BCOSSUpdateChatNotificationDelegate <NSObject>
-- (void)ossUpdateChatNotification:(BCOSSUpdateChatNotification *)notification chatId:(NSString *)chatId endedAt:(NSDate *)endTime reason:(NSString *)reason;
+- (void)ossUpdateChatNotification:(BCOSSUpdateChatNotification *)notification chatId:(NSString *)chatId
+                         answered:(NSString *)answered endedAt:(NSDate *)endTime reason:(NSString *)reason;
 @end
 
 @interface BCOSSUpdateChatNotification : BCOSSNotification

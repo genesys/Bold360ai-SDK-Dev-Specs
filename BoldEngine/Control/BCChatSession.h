@@ -111,7 +111,17 @@
  * @brief A dictionary that contains the localized strings for the current set language.
  * @since Version 1.0
  */
-@property (nonatomic, copy, readonly)NSDictionary *branding;
+@property (nonatomic, copy, readonly) NSDictionary *branding;
+
+/**
+ * @brief A dictionary that contains chat window settings.
+ */
+@property (nonatomic, copy, readonly) NSDictionary *chatWindowSettings;
+
+/**
+ * @brief A mutable dictionary that contains chat upload params.
+ */
+@property (nonatomic, copy, readonly) NSMutableDictionary *uploadParams;
 
 /**
  * @brief Stop and finish of the current session. It can be called any time to cancel and close the session. There are no calls on the delegate after this call.
@@ -134,8 +144,7 @@
 /**
  * @brief Submit the answers for the unavailable chat form.
  * @param unavailableForm The form with the answers.
- * @param submitUnavailableEmailDelegate The delegate to call back the result.
- * @returns \link BCCancelable \endlink to be able to cancel the request.
+ * @param submitUnavailableEmailDelegate The delegate to call back the result
  * @since Version 1.0
  */
 - (id<BCCancelable>)submitUnavailableEmail:(BCForm *)unavailableForm delegate:(id<BCSubmitUnavailableEmailDelegate>)submitUnavailableEmailDelegate;
@@ -144,7 +153,6 @@
  * @brief Submit the answers for the pre chat form.
  * @param preChatForm The form with the answers.
  * @param submitPreChatDelegate The delegate to call back the result.
- * @returns \link BCCancelable \endlink to be able to cancel the request.
  * @since Version 1.0
  */
 - (id<BCCancelable>)submitPreChat:(BCForm *)preChatForm andStartChatWithDelegate:(id<BCSubmitPreChatDelegate>)submitPreChatDelegate;
@@ -153,7 +161,6 @@
  * @brief Submit the answers for the post chat form.
  * @param postChatForm The form with the answers.
  * @param submitPostChatDelegate The delegate to call back the result.
- * @returns \link BCCancelable \endlink to be able to cancel the request.
  * @since Version 1.0
  */
 - (id<BCCancelable>)submitPostChat:(BCForm *)postChatForm delegate:(id<BCSubmitPostChatDelegate>)submitPostChatDelegate;
@@ -162,7 +169,6 @@
  * @brief Requests to send the transcript of the chat the given email address, when the chat ended.
  * @param emailAddress The email address to send the transcript to.
  * @param emailChatHistoryDelegate The delegate to call back the result.
- * @returns \link BCCancelable \endlink to be able to cancel the request.
  * @since Version 1.0
  */
 - (id<BCCancelable>)emailChatHistory:(NSString *)emailAddress delegate:(id<BCEmailChatHistoryDelegate>)emailChatHistoryDelegate;
@@ -171,7 +177,6 @@
  * @brief Request to change the current language. It changes the value of the brandings dictionary when finished and successful.
  * @param languageString The language string. This parameter must be an ISO 639-1 language code optionally followed by a dash then an ISO 3166-1 country code (en-US). If a language code is passed that is not recognized or supported en-US strings will be returned instead.
  * @param changeLanguageDelegate The delegate to call back the result.
- * @returns \link BCCancelable \endlink to be able to cancel the request.
  * @since Version 1.0
  */
 - (id<BCCancelable>)changeLanguage:(NSString *)languageString delegate:(id<BCChangeLanguageDelegate>)changeLanguageDelegate;

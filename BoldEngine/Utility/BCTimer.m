@@ -205,7 +205,8 @@
 }
 
 - (void)dealloc {
-    [self.timer invalidate], self.timer = nil;
+    [self.timer invalidate];
+    self.timer = nil;
 }
 
 

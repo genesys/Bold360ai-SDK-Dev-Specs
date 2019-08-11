@@ -19,7 +19,9 @@
 @synthesize visitorId = _visitorId;
 @synthesize language = _language;
 @synthesize includeBrandingValues = _includeBrandingValues;
+@synthesize includeChatWindowSettingsValues = _includeChatWindowSettingsValues;
 @synthesize skipPreChat = _skipPreChat;
+@synthesize secured = _secured;
 @synthesize data = _data;
 @synthesize delegate = _delegate;
 
@@ -27,12 +29,17 @@
     self.restCall.delegate = self;
     self.restCall.methodName = @"createChat";
     self.restCall.parser = [[BCCreateChatCallParser alloc] init];
+    
+    //TODO:: get it as dictionary on session creation.
     NSMutableDictionary *paramsDictionary = [NSMutableDictionary dictionary];
     paramsDictionary[@"VisitorID"] = self.visitorId ? self.visitorId : @"";
     paramsDictionary[@"Language"] = self.language ? self.language : @"en-US";
     paramsDictionary[@"IncludeBrandingValues"] = self.includeBrandingValues ? @"true" : @"false";
     paramsDictionary[@"SkipPreChat"] = self.skipPreChat ? @"true" : @"false";
+    paramsDictionary[@"IncludeChatWindowSettings"] = self.includeChatWindowSettingsValues ? @"true" : @"false";
+    paramsDictionary[@"IncludeLayeredBrandingValues"] = @"true";
     
+    if (self.secured) paramsDictionary[@"Secured"] = self.secured;
     NSString *customUrl = self.data[BCFormFieldCustomUrl];
     //Custom URL is sent in a separate parameter
     if (customUrl.length) {
@@ -51,6 +58,7 @@
             paramsDictionary[@"Data"] = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
         }
     }
+    
     self.restCall.params = paramsDictionary;
     [self.restCall start];
 }
