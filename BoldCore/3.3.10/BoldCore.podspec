@@ -12,7 +12,7 @@ s.homepage         = 'https://github.com/nanorepsdk/NanorepUI/wiki'
 s.license = 'private'
 s.author           = 'BoldCore'
 s.source = {
-    "http" => "https://dl.bintray.com/nanorep/Specs-Dev/BoldCore_version_v3.3.10.rc1_commit_1e43c979b524cc62cc5961f881284fa26791dbfb.zip"
+    "http" => "https://dl.bintray.com/nanorep/Specs-Dev/BoldCore_version_v3.3.10.rc2_commit_069aed8841f5b45b293289c2c651d21f5fc48cb0.zip"
 }
 s.vendored_frameworks = 'BoldCore.framework'
 s.requires_arc = true
