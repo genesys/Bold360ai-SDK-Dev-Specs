@@ -32,7 +32,7 @@ Pod::Spec.new do |s|
     # ]
 
 s.source = {
-"http" => "https://dl.bintray.com/nanorep/Specs-Dev/Bold360AI_version_v3.6.0.rc3_commit_f3bffc50b939ee23572e6e5d109afe65cd3bc91a.zip"
+"http" => "https://dl.bintray.com/nanorep/Specs-Dev/Bold360AI_version_v3.6.0.rc5_commit_0551638e6485edade40ecdf2aa0c4c8671a5b27c.zip"
 }
 
 s.ios.deployment_target  = '9.0'
