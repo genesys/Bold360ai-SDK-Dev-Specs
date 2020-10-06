@@ -26,7 +26,7 @@ Pod::Spec.new do |s|
     # ]
 
 s.source = {
-"http" => "https://dl.bintray.com/nanorep/Specs-Dev/BoldEngine_version_v2.4.6.rc5_commit_8a9ec6faf04aee77e7bcd454b33b3024f0b90baa.zip"
+"http" => "https://dl.bintray.com/nanorep/Specs-Dev/BoldEngine_version_v2.4.6.rc7_commit_144da3bd832c44e5581f4994edb22973207f3c97.zip"
 }
   
 s.vendored_frameworks = 'BoldEngine.framework'
@@ -34,8 +34,8 @@ s.requires_arc = true
 s.ios.deployment_target  = '10.0'
 s.pod_target_xcconfig = { 'CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF' => 'NO' }
 s.libraries = ['icucore']
-s.pod_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64 i386'}
-s.user_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64 i386' }
+s.pod_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64'}
+s.user_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
 # Private Pod frameworks
 s.dependency 'BoldCore'
 
