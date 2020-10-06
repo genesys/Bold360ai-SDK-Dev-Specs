@@ -11,10 +11,12 @@ s.homepage         = 'https://github.com/nanorepsdk/NanorepUI/wiki'
 s.license = 'private'
 s.author           = 'bold360ai'
 s.source = {
-    "http" => "https://dl.bintray.com/nanorep/Specs-Dev/BoldAIAccessibility_version_v1.7.1.rc1_commit_d5f5c0e7e8a706c576c27087cac67baff51ce2a5.zip"
+    "http" => "https://dl.bintray.com/nanorep/Specs-Dev/BoldAIAccessibility_version_v1.7.1.rc2_commit_c7aef9d0fc08a7484f5e24ac57f05793b198c7a7.zip"
 }
 s.vendored_frameworks = 'BoldAIAccessibility.framework'
 s.requires_arc = true
-s.ios.deployment_target  = '9.0'
+s.pod_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64'}
+s.user_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64'}
+s.ios.deployment_target  = '10.0'
 
 end
