@@ -26,7 +26,7 @@ Pod::Spec.new do |s|
     # ]
 
 s.source = {
-"http" => "https://bold360ai-mobile-artifacts.s3.amazonaws.com/ios/dev/BoldEngine/BoldEngine_version_v2.5.0.rc1_commit_966e4b61578bf57344b4352d847e9ac4a6d73c34.zip"
+"http" => "https://bold360ai-mobile-artifacts.s3.amazonaws.com/ios/dev/BoldEngine/BoldEngine_version_v2.5.0.rc3_commit_966e4b61578bf57344b4352d847e9ac4a6d73c34.zip"
 }
   
 s.vendored_frameworks = 'BoldEngine.framework'
@@ -37,6 +37,6 @@ s.libraries = ['icucore']
 s.pod_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64'}
 s.user_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
 # Private Pod frameworks
-s.dependency 'BoldCore', '3.5.0'
+s.dependency 'BoldCore', '3.5.2'
 
 end
