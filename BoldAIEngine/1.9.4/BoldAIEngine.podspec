@@ -11,7 +11,7 @@ s.homepage         = 'https://github.com/nanorepsdk/NanorepUI/wiki'
 s.license = 'private'
 s.author           = 'BoldAIEngine'
 s.source = {
-    "http" => "https://bold360ai-mobile-artifacts.s3.amazonaws.com/ios/dev/BoldAIEngine/BoldAIEngine_version_v1.9.4.rc1_commit_80cb74c8e45ce18dc18ad361740f609dcc6e681c.zip"
+    "http" => "https://bold360ai-mobile-artifacts.s3.amazonaws.com/ios/dev/BoldAIEngine/BoldAIEngine_version_v1.9.4.rc2_commit_80cb74c8e45ce18dc18ad361740f609dcc6e681c.zip"
 }
 s.vendored_frameworks = 'BoldAIEngine.framework'
 s.requires_arc = true
@@ -20,6 +20,6 @@ s.user_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64'}
 s.ios.deployment_target  = '10.0'
 
 # Private Pod frameworks
-s.dependency 'BoldCore', '3.5.0'
+s.dependency 'BoldCore', '3.5.2'
 
 end
