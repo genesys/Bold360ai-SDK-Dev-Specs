@@ -32,7 +32,7 @@ Pod::Spec.new do |s|
     # ]
 
 s.source = {
-"http" => "https://bold360ai-mobile-artifacts.s3.amazonaws.com/ios/dev/Bold360AI/Bold360AI_version_v0.0.1.rc3_commit_5c545493304d3ce9cca5557458c571f24a16f70b.zip"
+"http" => "https://bold360ai-mobile-artifacts.s3.amazonaws.com/ios/dev/Bold360AI/Bold360AI_version_v0.0.1.rc4_commit_97d8148252e129e0da489b9f9224a25bb302d872.zip"
 }
 
 s.ios.deployment_target  = '10.0'
