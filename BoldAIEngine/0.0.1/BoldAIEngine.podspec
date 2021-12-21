@@ -11,7 +11,7 @@ s.homepage         = 'https://github.com/nanorepsdk/NanorepUI/wiki'
 s.license = 'private'
 s.author           = 'BoldAIEngine'
 s.source = {
-    "http" => "https://bold360ai-mobile-artifacts.s3.amazonaws.com/ios/dev/BoldAIEngine/BoldAIEngine_version_v0.0.1.rc1_commit_7c0da86bdfae2914fd686937c770062347afc43d.zip"
+    "http" => "https://genesysdx.jfrog.io/artifactory/bold-ios.dev/BoldAIEngine/BoldAIEngine_version_v0.0.1.rc2_commit_7c0da86bdfae2914fd686937c770062347afc43d.zip"
 }
 s.vendored_frameworks = 'BoldAIEngine.framework'
 s.requires_arc = true
