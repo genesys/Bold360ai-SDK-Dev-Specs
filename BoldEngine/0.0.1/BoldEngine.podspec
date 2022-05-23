@@ -12,7 +12,7 @@ Pod::Spec.new do |s|
     BoldEngine is an SDK that used as chat handler on bold ai.
                        DESC
 
-  s.homepage         = 'https://github.com/nanorepsdk/NanorepUI/wiki'
+  s.homepage         = 'https://genesys.github.io/bold360-mobile-docs-ios/docs/overview'
   s.license          = ''
   s.author           = 'Bold360'
 
@@ -26,16 +26,17 @@ Pod::Spec.new do |s|
     # ]
 
 s.source = {
-"http" => "https://genesysdx.jfrog.io/artifactory/bold-ios.dev/BoldEngine/BoldEngine_version_v0.0.1.rc6_commit_eeeb06be8486f70d84fc00c1b3780f2500bdb5e4.zip"
+"http" => "https://genesysdx.jfrog.io/artifactory/bold-ios.dev/BoldEngine/BoldEngine_version_v0.0.1.rc7_commit_068ee15b124872594365b1bccaca48ab474189bf.zip"
 }
   
 s.vendored_frameworks = 'BoldEngine.framework'
 s.requires_arc = true
-s.ios.deployment_target  = '10.0'
+s.ios.deployment_target  = '9.0'
 s.pod_target_xcconfig = { 'CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF' => 'NO' }
 s.libraries = ['icucore']
 s.pod_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64'}
 s.user_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
+
 # Private Pod frameworks
 s.dependency 'BoldCore', '0.0.1'
 
