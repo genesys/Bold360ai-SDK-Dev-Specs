@@ -32,12 +32,12 @@ Pod::Spec.new do |s|
     # ]
 
 s.source = {
-"http" => "https://genesysdx.jfrog.io/artifactory/bold-ios.dev/Bold360AI/Bold360AI_version_v0.0.1.rc5_commit_97d8148252e129e0da489b9f9224a25bb302d872.zip"
+"http" => "https://genesysdx.jfrog.io/artifactory/bold-ios.dev/Bold360AI/Bold360AI_version_v0.0.1.rc6_commit_418047e6d65564d24b9f373289b8c1473994d77b.zip"
 }
 
-s.ios.deployment_target  = '10.0'
+s.ios.deployment_target  = '9.0'
 
-s.subspec 'Core' do |sp|
+s.subspec 'Global' do |sp|
   sp.vendored_frameworks = 'Bold360AI.framework'
   sp.requires_arc = true
 
@@ -49,6 +49,6 @@ s.subspec 'Core' do |sp|
   sp.user_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64'}
 end
 
-s.default_subspec = 'Core'
+s.default_subspec = 'Global'
 
 end
