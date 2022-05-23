@@ -8,16 +8,16 @@ s.description      = <<-DESC
 BoldCore
 DESC
 
-s.homepage         = 'https://github.com/nanorepsdk/NanorepUI/wiki'
+s.homepage         = 'https://genesys.github.io/bold360-mobile-docs-ios/docs/overview'
 s.license = 'private'
 s.author           = 'BoldCore'
 s.source = {
-    "http" => "https://genesysdx.jfrog.io/artifactory/bold-ios.dev/BoldCore/BoldCore_version_v0.0.1.rc13_commit_87ddb3a3090f8003d8b4551e74b82d9157d16104.zip"
+    "http" => "https://genesysdx.jfrog.io/artifactory/bold-ios.dev/BoldCore/BoldCore_version_v0.0.1.rc17_commit_0ecc4b1fe6f9a65502db5ff401888e6e97155967.zip"
 }
 s.pod_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64'}
 s.user_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64'}
 s.vendored_frameworks = 'BoldCore.framework'
 s.requires_arc = true
-s.ios.deployment_target  = '10.0'
+s.ios.deployment_target  = '9.0'
 
 end
