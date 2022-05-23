@@ -12,7 +12,7 @@ s.homepage         = 'https://genesys.github.io/bold360-mobile-docs-ios/docs/ove
 s.license = 'private'
 s.author           = 'BoldCore'
 s.source = {
-    "http" => "https://genesysdx.jfrog.io/artifactory/bold-ios.dev/BoldCore/BoldCore_version_v0.0.1.rc17_commit_0ecc4b1fe6f9a65502db5ff401888e6e97155967.zip"
+    "http" => "https://bold360ai-mobile-artifacts.s3.amazonaws.com/ios/dev/BoldCore/BoldCore_version_v0.0.1.rc18_commit_0ecc4b1fe6f9a65502db5ff401888e6e97155967.zip"
 }
 s.pod_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64'}
 s.user_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64'}
