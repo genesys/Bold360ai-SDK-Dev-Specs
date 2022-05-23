@@ -7,17 +7,17 @@ s.description      = <<-DESC
 BoldAIEngine is an SDK that contains two main services: Search & Conversation.
 DESC
 
-s.homepage         = 'https://github.com/nanorepsdk/NanorepUI/wiki'
+s.homepage         = 'https://genesys.github.io/bold360-mobile-docs-ios/docs/overview'
 s.license = 'private'
 s.author           = 'BoldAIEngine'
 s.source = {
-    "http" => "https://genesysdx.jfrog.io/artifactory/bold-ios.dev/BoldAIEngine/BoldAIEngine_version_v0.0.1.rc2_commit_7c0da86bdfae2914fd686937c770062347afc43d.zip"
+    "http" => "https://genesysdx.jfrog.io/artifactory/bold-ios.dev/BoldAIEngine/BoldAIEngine_version_v0.0.1.rc3_commit_045f4048b864160e67c951de3469e4b6451ef237.zip"
 }
 s.vendored_frameworks = 'BoldAIEngine.framework'
 s.requires_arc = true
 s.pod_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64'}
 s.user_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64'}
-s.ios.deployment_target  = '10.0'
+s.ios.deployment_target  = '9.0'
 
 # Private Pod frameworks
 s.dependency 'BoldCore', '0.0.1'
